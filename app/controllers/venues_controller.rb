@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController
 
   def index
-    @event = Event.all
+    @venues = Venue.all
   end
 
   def new
@@ -9,35 +9,37 @@ class VenuesController < ApplicationController
   end
 
   def create
-    user = User.new
-    user.email = params[:email]
-    user.password = params[:password]
-    user.name = params[:name]
-    user.gender = params[:gender]
-    user.image = params[:image]
-    user.user_type_id = params[:user_type_id]
-    user.save
+    venue = Venue.new
+    venue.name = params[:name]
+    venue.address = params[:address]
+    venue.suburd = params[:suburd]
+    venue.postcode = params[:postcode]
+    venue.venue_type = params[:venue_type]
+    venue.image = params[:image]
+    venue.user_id = params[:user_id]
+    venue.description = params[:description]
+    venue.save
   end
 
   def show
-    @user = User.find(params[:id])
+    @venue = Venue.find(params[:id])
   end
 
   def update
-    user.email = params[:email]
-    user.password = params[:password]
-    user.name = params[:name]
-    user.gender = params[:gender]
-    user.image = params[:image]
-    user.user_type_id = params[:user_type_id]
-    user.save
+    venue.name = params[:name]
+    venue.address = params[:address]
+    venue.suburd = params[:suburd]
+    venue.postcode = params[:postcode]
+    venue.venue_type = params[:venue_type]
+    venue.image = params[:image]
+    venue.user_id = params[:user_id]
+    venue.description = params[:description]
+    venue.save
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    venue = Venue.find(params[:id])
+    venue.destroy
   end
-
-
 
 end

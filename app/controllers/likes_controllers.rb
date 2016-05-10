@@ -1,27 +1,29 @@
 class LikesController < ApplicationController
-
-  def index
-    @likes = Likes.all
-  end
-
-  def new
-  end
+  # def index
+  #   @likes = Like.all
+  # end
 
   def create
-    # post from form
+    like = Like.new
+    like = params[:user_id]
+    like = params[:venue_id]
+    like.save
   end
+  #
+  # def show
+  #   @like = Like.find(params[:id])
+  # end
 
-  def show
-  end
+  # def update
+  #   @like = Like.find(params[:id])
+  #   @like = params[:user_id]
+  #   @like = params[:venue_id]
+  #   @like.save
+  # end
 
-  def update
-  end
-
-  end
-
-  def delete
-    @like = Like.find(params[:id])
-    @like.destroy
-  end
+  # def destroy
+  #   @like = Like.find(params[:id])
+  #   @like.destroy
+  # end
 
 end
