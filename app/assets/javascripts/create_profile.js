@@ -1,4 +1,4 @@
-$( document ).on('page:load', function() {
+$( document ).on('ready', function() {
 
   $('.box1').click(function() {
     $(this).addClass('selected');

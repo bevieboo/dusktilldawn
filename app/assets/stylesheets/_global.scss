@@ -84,3 +84,47 @@ input {
 input:focus {
   border-color: $sunset-orange;
 }
+
+.list {
+  text-align: center;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.item {
+  width: 25%;
+  display: inline-block;
+  margin: 10px 20px;
+  border: 1px solid black;
+  position: relative;
+}
+.item-detail {
+  width: 60%;
+  display: inline-block;
+  margin: 10px 20px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.venue-details-wrap {
+  margin: 15px;
+  text-align: left;
+}
+
+.venue-name, .venue-suburb, .venue-desc, .venue-address {
+  margin-bottom: 10px;
+}
+
+.venue-address, .venue-suburb {
+  display: inline-block;
+}
+
+.venue-type {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 12px;
+}
