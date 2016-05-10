@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars-v4.0.5
+//= require facebook_login
 //= require turbolinks
-//= require_tree .
