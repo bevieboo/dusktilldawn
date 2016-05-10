@@ -3,6 +3,7 @@ module Api
 
         def index
           @venues = Venue.all
+          render json: @venues.to_json, status: 201
         end
 
         def new
@@ -20,10 +21,12 @@ module Api
           venue.user_id = params[:user_id]
           venue.description = params[:description]
           venue.save
+          render json: venue.to_json, status: 201
         end
 
         def show
           @venue = Venue.find(params[:id])
+          render json: @venue.to_json, status: 201
         end
 
         def update
@@ -36,6 +39,7 @@ module Api
           venue.user_id = params[:user_id]
           venue.description = params[:description]
           venue.save
+          render json: venue.to_json, status: 201
         end
 
         def destroy

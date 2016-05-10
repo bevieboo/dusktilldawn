@@ -5,10 +5,14 @@ module Api
     # end
 
     def create
+      @venue = Venue.find(params[:venue_id])
       like = Like.new
       like = params[:user_id]
       like = params[:venue_id]
       like.save
+      data = {like_count: @venue.like_count}
+     # how many like count for this venue
+      render json: data.to_json, status: 201
     end
     #
     # def show

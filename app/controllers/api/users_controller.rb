@@ -3,6 +3,7 @@ module Api
 
     def index
       @users = User.all
+      render json: @users.to_json, status: 201
     end
 
     def new
@@ -18,10 +19,12 @@ module Api
       user.image = params[:image]
       user.user_type_id = params[:user_type_id]
       user.save
+      render json: user.to_json, status: 201
     end
 
     def show
       @user = User.find(params[:id])
+      render json: @user.to_json, status: 201
     end
 
     def update
@@ -32,6 +35,7 @@ module Api
       user.image = params[:image]
       user.user_type_id = params[:user_type_id]
       user.save
+      render json: user.to_json, status: 201
     end
 
     def destroy
