@@ -78,3 +78,4 @@
     artist.gender = 'male'
     artist.image =''
     artist.event_id = ''
+    artist.save
