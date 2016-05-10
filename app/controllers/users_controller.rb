@@ -16,7 +16,9 @@ class UsersController < ApplicationController
     user.gender = params[:gender]
     user.image = params[:image]
     user.user_type_id = params[:user_type_id]
-    user.save
+    if user.save
+      render :index
+    end
   end
 
   def show

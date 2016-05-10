@@ -1,25 +1,28 @@
 class GenresController < ApplicationController
 
   def index
-    @genres = Genres.all
-  end
-
-  def new
+    @genres = Genre.all
   end
 
   def create
-    # post from form
+    genre = Genre.new
+    genre.name = params[:name]
+    genre.save
   end
 
   def show
+    @genre = Genre.find(params[:id])
   end
 
   def update
+    genre = Genre.find(params[:id])
+    genre.name = params[:name]
+    genre.save
   end
 
-  def delete
-    @genre = Genre.find(params[:id])
-    @genre.destroy
+  def destroy
+    genre = Genre.find(params[:id])
+    genre.destroy
   end
 
 end
