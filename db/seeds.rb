@@ -11,7 +11,7 @@
 
 #=====  test data ========
 # clear all data in the database
-# keep this delete very important,bec there are FK relationship
+# keeping this delete order is very important,bec there are FK relationship
    Artist.destroy_all
    Comment.destroy_all
    Event.destroy_all
@@ -39,6 +39,15 @@
    user.image = ''
    user.user_type_id = type.id
    user.save
+
+   user2 = User.new
+   user2.email = 'bev@gmail.com'
+   user2.password = '1234'
+   user2.name = 'bev'
+   user2.gender = 'female'
+   user2.image = ''
+   user2.user_type_id = type2.id
+   user2.save
 #  venuse table
    venue = Venue.new
    venue.name = "Precint Hotel"
@@ -58,6 +67,42 @@
    Precinct Hotel is the place to be in Melbourne"
    venue.save
 
+   venue2 = Venue.new
+   venue2.name = "Precint Hotel"
+   venue2.address = "Richmond"
+   venue2.suburd = "Richmond"
+   venue2.postcode = 3000
+   venue2.venue_type = 'bar'
+   venue2.image = 'http://www.buddhabar.com/img/carousel/Slides/Restaurants/Manille/1.jpg'
+   venue2.user_id = user2.id
+   venue2.description = "Originally established in 1926, the Precinct Hotel today represents the culinary, corporate and
+   casual delights that see Melbourne as a stand out international destination for
+   visitors and preferred abode for many. Nestled in the heart of Richmond and
+   simultaneously catering for a versatile range of occasions, the Precinct Hotel is a
+   family owned and operated establishment that offers a warm yet sophisticated
+   atmosphere, guaranteed to make any soiree an unforgettable occasion. From intimate
+   dining and live entertainment to big screen sporting events over the weekend...
+   Precinct Hotel is the place to be in Melbourne"
+   venue2.save
+
+   venue3 = Venue.new
+   venue3.name = "Precint Hotel"
+   venue3.address = "Richmond"
+   venue3.suburd = "Richmond"
+   venue3.postcode = 3000
+   venue3.venue_type = 'bar'
+   venue3.image = 'http://www.buddhabar.com/img/carousel/Slides/Restaurants/Manille/1.jpg'
+   venue3.user_id = user2.id
+   venue3.description = "Originally established in 1926, the Precinct Hotel today represents the culinary, corporate and
+   casual delights that see Melbourne as a stand out international destination for
+   visitors and preferred abode for many. Nestled in the heart of Richmond and
+   simultaneously catering for a versatile range of occasions, the Precinct Hotel is a
+   family owned and operated establishment that offers a warm yet sophisticated
+   atmosphere, guaranteed to make any soiree an unforgettable occasion. From intimate
+   dining and live entertainment to big screen sporting events over the weekend...
+   Precinct Hotel is the place to be in Melbourne"
+   venue3.save
+
   # genres table
     genre = Genre.new
     genre.name = 'music'
@@ -66,12 +111,26 @@
     genre2.name = 'Hip-hop'
     genre2.save
 
+
 #  events table
    event = Event.create(name: "Revolver Wednesday",
-                        image: "",
-                        event_time: "",
+                        image: "http://paulunderhill.com/wp-content/uploads/2013/01/music-photographer-festival-event-photography_93.jpg",
+                        event_time: "2016-6-2 19:12:12",
                         genre_id: genre.id,
                         venue_id: venue.id)
+
+   event = Event.create(name: "Revolver Friday",
+                       image: "http://www.lasvegasweddingphotographer.net/wp-content/uploads/2014/06/las-vegas-bar-mitzvah-photographer.jpg",
+                       event_time: "2016-5-20 18:12:12",
+                       genre_id: genre2.id,
+                       venue_id: venue3.id)
+
+   event = Event.create(name: "HAAAA Wednesday",
+                       image: "http://www.bizbash.com/content/editorial/storyimg/big/spidypreview03.jpg",
+                       event_time: "2016-6-1 20:12:12",
+                       genre_id: genre2.id,
+                       venue_id: venue3.id)
+
 # artists table
     artist = Artist.new
     artist.name = 'dt'

@@ -4,6 +4,7 @@ module Api
 
       def index
         @comments = Comment.all
+        render json: @comments.to_json, status: 201
       end
 
       def create
@@ -11,10 +12,12 @@ module Api
         comment = params[:user_id]
         comment = params[:venue_id]
         comment.save
+        render json: comment.to_json, status: 201
       end
 
       def show
         @comment = Comment.find(params[:id])
+        render json: comment.to_json, status: 201
       end
 
       def update
@@ -22,6 +25,7 @@ module Api
         comment = params[:user_id]
         comment = params[:venue_id]
         comment.save
+        render json: comment.to_json, status: 201
       end
 
       def destroy
