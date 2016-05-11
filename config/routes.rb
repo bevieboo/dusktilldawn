@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/' => 'home#index'
   get '/' => 'users#index'
+  get '/near_you' => 'events#near_you'
 
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy'
