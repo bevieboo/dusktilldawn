@@ -61,6 +61,12 @@ class EventsController < ApplicationController
   end
 
   def near_you
+    venue = Venue.find_by(name: "Precint Hotel")
+    @long = venue.longitude
+    @lat = venue.latitude
+
+
+
   end
 
 end
