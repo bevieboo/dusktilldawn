@@ -60,4 +60,7 @@ class EventsController < ApplicationController
 
   end
 
+  def near_you
+  end
+
 end
