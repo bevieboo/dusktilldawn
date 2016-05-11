@@ -3,7 +3,7 @@ module Api
 
       def index
         events = Event.all
-        render json: events.to_json, status: 201
+        render json: events.as_json
       end
 
       def new
@@ -23,6 +23,7 @@ module Api
 
       def show
         event = Event.find(params[:id])
+
         render json: event.to_json, status: 201
       end
 

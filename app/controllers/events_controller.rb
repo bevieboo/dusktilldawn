@@ -7,8 +7,6 @@ class EventsController < ApplicationController
          if genre != nil
             @events = genre.events
             render :index
-         else
-            redirect_to '/'
          end
     else
         redirect_to '/'
