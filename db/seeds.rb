@@ -104,13 +104,15 @@
    venue3.save
 
   # genres table
+
+
+    genre2 = Genre.new
+    genre2.name = 'Hip-hop'
+    genre2.save
+
    genre = Genre.new
    genre.name = 'RnB'
    genre.save
-
-   genre2 = Genre.new
-   genre2.name = 'Hip-hop'
-   genre2.save
 
    genre3 = Genre.new
    genre3.name = 'Drum n Bass'
@@ -155,6 +157,7 @@
    genre13 = Genre.new
    genre13.name = 'Trance'
    genre13.save
+
 
 
 #  events table

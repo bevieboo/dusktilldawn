@@ -1,3 +1,24 @@
+
+$(document).ready(function(){
+
+  function showEvents() {
+    $.ajax(function(){
+      url: "http://localhost:3000/api/events"
+      method: 'get'
+    }).done(function(){
+
+      $.each(events, function(index, event){
+        // if event.genre_id == Gendre.
+          var template = $("event-template").html();
+          var templateFunction = Handlebars.compile(template);
+
+          if (event.image == undefined) {
+            eventImage = "http://www.molotowcocktail.eu/images/slider-img4.jpg"
+          } else {
+            eventImage = event.image
+          };
+          console.log(event.image);
+
 $( document ).on('ready', function() {
 
   function showEvents() {
@@ -18,25 +39,43 @@ $( document ).on('ready', function() {
             venueImage = event.image
           };
 
+
           var html = templateFunction({
             name: event.name,
             id: event.id,
+
+            type: event.genre.name.toUpperCase(),
+            image_url: eventImage,
+            // suburb: event.suburd,
+
             type: event.venue.venue_type,
             image_url: venueImage,
             venue: event.venue.name,
+
             like_count: event.like_count
           });
 
           var $newDiv = $(html);
           $('.list').append($newDiv);
 
+
+        })
+
+      });
+
+
+=======
         });
       });
     };
+>>>>>>> e8bde314f2f8d28439cf567c18c44e1e5282e215
   }
 
   showEvents();
 
+<<<<<<< HEAD
+
+=======
   // $('.list').on('click', '.item', function(event) {
   //
   //   $('.list').empty();
@@ -81,5 +120,6 @@ $( document ).on('ready', function() {
     $('.list').empty();
     showVenues();
   })
+>>>>>>> e8bde314f2f8d28439cf567c18c44e1e5282e215
 
 });
