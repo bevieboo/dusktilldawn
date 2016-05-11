@@ -11,9 +11,7 @@ $(document).ready(function() {
     }
   });
 
-
-
-  $('.timepicker').timepicker();
+  $('.timepicker').timepicker({ 'timeFormat': 'H:i:s' });
   // var picker = new Pikaday({
   //   field: document.getElementById('datepicker'),
   //   format: 'D MMM YYYY',
