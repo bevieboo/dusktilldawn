@@ -13,6 +13,7 @@ class EventsController < ApplicationController
         redirect_to '/'
     end
   end
+  end
 
 
   def new
