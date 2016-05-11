@@ -2,16 +2,19 @@
 class EventsController < ApplicationController
 
   def index
-   if params[:search_box] != ''
-         genre = Genre.find_by(name: params[:search_box])
-         if genre != nil
-            @events = genre.events
-            render :index
-         end
-    else
-        redirect_to '/'
-    end
-  
+     @events = Event.all
+  end
+
+  def search_event
+     if params[:search_box] != ''
+          genre = Genre.find_by(name: params[:search_box])
+          if genre != nil
+             @events = genre.events
+             render :result
+          end
+     else
+         redirect_to '/'
+     end
   end
 
 

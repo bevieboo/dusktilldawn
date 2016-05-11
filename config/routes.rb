@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/sessions' => 'sessions#destroy'
 # ================ normal controllers =====================
     resources :events
+    get '/research' => 'events#search_event'
     resources :users   #read documentation on how this works
     resources :likes
     resources :artists
