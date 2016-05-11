@@ -29,8 +29,13 @@ $( document ).on('ready', function() {
             like_count: event.like_count
           });
 
+
+
           var $newDiv = $(html);
-          $('.list').append($newDiv);
+          var newLink = $("<a />", {
+            href : 'events' + $(data-event-id),
+            text : "Click for details.."
+          }).append($($newDiv));
 
         });
       });
