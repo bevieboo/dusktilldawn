@@ -51,7 +51,7 @@
 #  venuse table
    venue = Venue.new
    venue.name = "Precint Hotel"
-   venue.address = "Richmond"
+   venue.address = "60 Swan St, Cremorne VIC 3121"
    venue.suburd = "Richmond"
    venue.postcode = 3000
    venue.venue_type = 'bar'
@@ -69,7 +69,7 @@
 
    venue2 = Venue.new
    venue2.name = "Precint Hotel"
-   venue2.address = "Richmond"
+   venue2.address = "60 Swan St, Cremorne VIC 3121"
    venue2.suburd = "Richmond"
    venue2.postcode = 3000
    venue2.venue_type = 'bar'
@@ -87,7 +87,7 @@
 
    venue3 = Venue.new
    venue3.name = "Precint Hotel"
-   venue3.address = "Richmond"
+   venue3.address = "60 Swan St, Cremorne VIC 3121"
    venue3.suburd = "Richmond"
    venue3.postcode = 3000
    venue3.venue_type = 'bar'
@@ -102,6 +102,29 @@
    dining and live entertainment to big screen sporting events over the weekend...
    Precinct Hotel is the place to be in Melbourne"
    venue3.save
+
+
+   venue4 = Venue.new
+   venue4.name = "Sorry Grandma"
+   venue4.address ="590 Little Bourke St, Melbourne VIC 3000"
+   venue4.suburd = "CBD"
+   venue4.postcode = 3000
+   venue4.venue_type = 'bar'
+   venue4.image = 'http://www.barsandnightclubs.com.au/assets/images/content/club/melbourne//Sorry%20Grandma%20-%20Melbourne%20CBD/Sorry%20Grandma%20-%20Melbourne%20CBD%20-%20Melbourne%20-%20Photo02.jpg'
+   venue4.user_id = user2.id
+   venue4.description = "Buzzing dance club featuring well-known DJs and themed events in an opulently decorated space."
+   venue4.save
+
+   venue5 = Venue.new
+   venue5.name = "Lustre Bar"
+   venue5.address ="1/252 Flinders Lane, Melbourne VIC 3000"
+   venue5.suburd = "CBD"
+   venue5.postcode = 3000
+   venue5.venue_type = 'bar'
+   venue5.image = 'http://www.bestclubsin.com/media/picture/listing/listingimages/image_365.jpg'
+   venue5.user_id = user2.id
+   venue5.description = "Intimate bar with crimson walls and a chilled vibe, for creative cocktails, desserts and live music."
+   venue5.save
 
   # genres table
 

@@ -61,12 +61,17 @@ class EventsController < ApplicationController
   end
 
   def near_you
-    venue = Venue.find_by(name: "Precint Hotel")
-    @long = venue.longitude
-    @lat = venue.latitude
 
+    #RUBY NOT NEEDED AS NOW USING AJAX API REQUEST IN ERB FILE
+    # venue = Venue.find_by(name: "Sorry Grandma")
+    # @long = venue.longitude
+    # @lat = venue.latitude
 
-
+    # venues = Venue.all
+    # venues.each do |venue|
+    #   @long = venue.longitude
+    #   @lat = venue.latitude
+    # end
   end
 
 end
