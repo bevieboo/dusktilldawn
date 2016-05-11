@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require handlebars-v4.0.5
 //= require venues
+//= require events
 //= require index
 //= require facebook_login
 //= require create_profile

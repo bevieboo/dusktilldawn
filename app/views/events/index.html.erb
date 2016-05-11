@@ -1,9 +1,8 @@
 <div class="list"></div>
 
-<script id="venues-template" type='text/x-handlebars-template'>
+<script id="events-template" type='text/x-handlebars-template'>
 
   <div class="item" data-venue-id="{{ id }}">
-
     <div class="venue-image">
       <img src="{{ image_url }}">
     </div>
@@ -19,20 +18,15 @@
       </div>
 
       <div class="venue-suburb">
-        <h2>{{ suburb }}</h2>
+        <h2>{{ venue }}</h2>
       </div>
 
     </div>
-    <!-- <div class="like">
-      <h2>Likes</h2>
-      <span class="right likes">{{ like_count }}</span>
-    </div> -->
-
   </div>
 
 </script>
 
-<script id="venue-details-template" type='text/x-handlebars-template'>
+<script id="event-details-template" type='text/x-handlebars-template'>
 
   <div class="item-detail" data-venue-id="{{ id }}">
 
@@ -67,11 +61,5 @@
   </div>
 
   <div class="back">BACK</div>
-    <!-- <div class="like">
-      <h2>Likes</h2>
-      <span class="right likes">{{ like_count }}</span>
-    </div> -->
-
-
 
 </script>
