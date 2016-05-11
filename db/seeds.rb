@@ -105,7 +105,7 @@
 
   # genres table
     genre = Genre.new
-    genre.name = 'music'
+    genre.name = 'Pop'
     genre.save
     genre2 = Genre.new
     genre2.name = 'Hip-hop'
