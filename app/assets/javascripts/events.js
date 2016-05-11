@@ -1,24 +1,3 @@
-
-$(document).ready(function(){
-
-  function showEvents() {
-    $.ajax(function(){
-      url: "http://localhost:3000/api/events"
-      method: 'get'
-    }).done(function(){
-
-      $.each(events, function(index, event){
-        // if event.genre_id == Gendre.
-          var template = $("event-template").html();
-          var templateFunction = Handlebars.compile(template);
-
-          if (event.image == undefined) {
-            eventImage = "http://www.molotowcocktail.eu/images/slider-img4.jpg"
-          } else {
-            eventImage = event.image
-          };
-          console.log(event.image);
-
 $( document ).on('ready', function() {
 
   function showEvents() {
@@ -34,59 +13,39 @@ $( document ).on('ready', function() {
           var templateFunction = Handlebars.compile(template);
 
           if (event.image == undefined) {
-            venueImage = "http://www.molotowcocktail.eu/images/slider-img4.jpg"
+            eventImage = "http://www.molotowcocktail.eu/images/slider-img4.jpg"
           } else {
-            venueImage = event.image
+            eventImage = event.image
           };
-
 
           var html = templateFunction({
             name: event.name,
             id: event.id,
-
-            type: event.genre.name.toUpperCase(),
-            image_url: eventImage,
-            // suburb: event.suburd,
-
             type: event.venue.venue_type,
-            image_url: venueImage,
+            image_url: eventImage,
             venue: event.venue.name,
-
             like_count: event.like_count
           });
 
           var $newDiv = $(html);
           $('.list').append($newDiv);
 
-
-        })
-
-      });
-
-
-=======
         });
       });
     };
->>>>>>> e8bde314f2f8d28439cf567c18c44e1e5282e215
   }
 
   showEvents();
 
-<<<<<<< HEAD
-
-=======
   // $('.list').on('click', '.item', function(event) {
   //
   //   $('.list').empty();
   //   var $item = $(event.target).closest('.item');
   //   var venueId = $item.data('venue-id');
-  //   console.log(venueId);
   //
   //   $.ajax({
   //     url: 'http://localhost:3000/api/venues/' + venueId
   //   }).done(function(venue) {
-  //     console.log(venue);
   //
   //     var template = $('#venue-details-template').html();
   //     var templateFunction = Handlebars.compile(template);
@@ -120,6 +79,5 @@ $( document ).on('ready', function() {
     $('.list').empty();
     showVenues();
   })
->>>>>>> e8bde314f2f8d28439cf567c18c44e1e5282e215
 
 });

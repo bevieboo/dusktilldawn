@@ -4,9 +4,12 @@ module Api
       def index
         events = Event.all
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
         # render json: events.to_json, status: 201
 =======
 >>>>>>> e8bde314f2f8d28439cf567c18c44e1e5282e215
+>>>>>>> 00d7bd2ea1f52d301dc1b99c0ddd92327081c408
         render json: events.as_json
       end
 
@@ -27,6 +30,7 @@ module Api
 
       def show
         event = Event.find(params[:id])
+
         render json: event.to_json, status: 201
       end
 
