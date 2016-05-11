@@ -16,8 +16,8 @@ class LikesController < ApplicationController
 
   # def update
   #   @like = Like.find(params[:id])
-  #   @like = params[:user_id]
-  #   @like = params[:venue_id]
+  #   @like.user_id = params[:user_id]
+  #   @like.venue_id = params[:venue_id]
   #   @like.save
   # end
 

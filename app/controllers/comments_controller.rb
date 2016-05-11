@@ -6,8 +6,9 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.new
-    comment = params[:user_id]
-    comment = params[:venue_id]
+    comment.user_id = params[:user_id]
+    comment.venue_id = params[:venue_id]
+    comment.content = params[:content]
     comment.save
   end
 
@@ -17,8 +18,9 @@ class CommentsController < ApplicationController
 
   def update
     comment = Comment.find(params[:id])
-    comment = params[:user_id]
-    comment = params[:venue_id]
+    comment.user_id = params[:user_id]
+    comment.venue_id = params[:venue_id]
+    comment.content = params[:content]
     comment.save
   end
 

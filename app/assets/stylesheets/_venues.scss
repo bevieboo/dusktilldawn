@@ -1,0 +1,37 @@
+// leo
+
+.venue_like_name{
+  display: inline-block;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.like_count{
+  display: inline-block;
+  width: 15%;
+  box-sizing: border-box;
+  background-color: #CC7800;
+  text-align: center;
+  border-radius: 40px;
+
+}
+
+.likeBtn{
+  display: inline-block;
+  width: 15%;
+  height: 25px;
+  border-radius: 30px;
+  vertical-align: middle;
+}
+
+#input_comment{
+  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.comments-part{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
