@@ -3,29 +3,45 @@
     <h2 class="search-title">FIND A NIGHTSPOT</h2>
     <div class="search-bar">
       <form class="search" action='/research'>
-        <!-- <input type="text" name="search_box" placeholder="Search by music genre or artist..." class="search-input"> -->
-          <select name="search-box" class="section">
-        <!-- <button class="search-button"></button> -->
-      </select>
-      <button>Search</button>
+        <input type="text" id="tag" name="search_box" placeholder="Search by music genre or artist..." class="search-input">
+        <button class="search-button"></button>
+
       </form>
     </div>
   </div>
 </div>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 
 <script>
-
-$.ajax({
-  url: "http://localhost:3000/api/genres",
-  method: 'get'
-
-}).done(function(genres){
-  genres.forEach(function(genre){
-    var $newOpt = $("<option>").text(genre.name);
-    $newOpt.val(genre.id);
-
-    $(".section").append($newOpt);
+  // $.ajax({
+  //   url: "http://localhost:3000/api/genres",
+  //   method: 'get'
+  // }).done(function(genres){
+  //   genres.forEach(function(genre){
+  //     var $newOpt = $("<option>").text(genre.name);
+  //     $newOpt.val(genre.id);
+  //     $(".section").append($newOpt);
+  //   });
+  // });
+  $(function(){
+    var avTags = [
+      'Hip-hop',
+      'RnB',
+      'Drum n Bass',
+      'Blues',
+      'House',
+      'Rock',
+      'Jazz',
+      'Reggae',
+      'Dub Step',
+      'Country',
+      'Indie',
+      'Pop',
+      'Trance'
+    ];
+    $("#tag").autocomplete({
+      source: avTags
+    });
   });
-});
 
 </script>
