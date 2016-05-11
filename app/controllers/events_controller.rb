@@ -1,10 +1,11 @@
+
 class EventsController < ApplicationController
 
   def index
    if params[:search_box] != ''
          genre = Genre.find_by(name: params[:search_box])
          if genre != nil
-            @events = Genre.events
+            @events = genre.events
             render :index
          else
             redirect_to '/'
