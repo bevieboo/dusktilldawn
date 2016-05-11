@@ -25,6 +25,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    byebug
     event = Event.new
     event.name = params[:name]
     event.image= params[:image]
