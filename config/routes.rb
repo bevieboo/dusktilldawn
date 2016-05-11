@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   get '/' => 'users#index'
 
-  post '/sessions' => 'sessions#create'
-  delete '/sessions' => 'sessions#destroy'
 
 # ================ normal controllers =====================
     resources :events

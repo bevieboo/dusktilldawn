@@ -49,9 +49,3 @@
 //     $('#status:has(img)').addClass('profile-image');
 //   });
 // }
-
-$(document).ready(function() {
-  $('.js-login-btn').click(function() {
-    $('.login-popup-wrap').toggle();
-  });
-})
