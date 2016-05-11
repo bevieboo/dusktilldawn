@@ -31,6 +31,7 @@ class EventsController < ApplicationController
     event.event_time = params[:event_time]
     event.genre_id = params[:genre_id]
     event.venue_id = params[:venue_id]
+    event.description = params[:description]
     event.save
   end
 
