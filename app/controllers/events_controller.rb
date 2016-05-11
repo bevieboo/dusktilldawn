@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     else
         redirect_to '/'
     end
-  end
+  
   end
 
 
@@ -34,11 +34,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def search
-    @genre = Genre.find(params[:search_box])
-      @genre.each do |g|
-        g = Event.find_by(params[:genre_id])
-  end
+  # def search
+  #   @genre = Genre.find(params[:search_box])
+  #     @genre.each do |g|
+  #       g = Event.find_by(params[:genre_id])
+  # end
 
   def update
     @event = Event.find(params[:id])

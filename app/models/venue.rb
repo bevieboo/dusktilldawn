@@ -4,15 +4,15 @@ class Venue < ActiveRecord::Base
    has_many :likes, dependent: :destroy # if delete this avenue, related like will be delete
    belongs_to :user
 
-  attr_accessible :latitude, :longitude
   geocoded_by :address
+  # geocoded_by :address
   after_validation :geocode
-
-    def address
-      venue.address
-      venue.suburd
-      venue.postcode
-    end
+    #
+    # def address
+    #   venue.address
+    #   venue.suburd
+    #   venue.postcode
+    # end
 
    def like_count
        likes.count

@@ -8,8 +8,7 @@ class CreateVenues < ActiveRecord::Migration
       t.text :image
       t.string :type
       t.integer :user_id
-      latitude :float
-      longitude :float
+    
 
       t.timestamps null: false
     end

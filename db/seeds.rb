@@ -104,7 +104,7 @@
    venue3.save
 
   # genres table
-      HEAD
+
 
     genre2 = Genre.new
     genre2.name = 'Hip-hop'
