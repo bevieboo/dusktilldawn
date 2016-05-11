@@ -2,7 +2,7 @@
     <h1>search events</h1>
     <div class="list">
     <% @events.each do |event| %>
-        <div class="item" data-venue-id="<%=event.id%>">
+        <div class="item" data-event-id="<%=event.id%>">
           <div class="event-image">
             <img src="<%=event.image%>">
           </div>
@@ -11,7 +11,7 @@
               <h2></h2>
             </div>
             <div class="event-time">
-              <a href="/events/<%= event.id %>">Check details...</a>
+              <a href="/events/<%= event.id %>">Click for details...</a>
               <h2><%=event.event_time%></h2>
             </div>
             <div class="event-venue">
