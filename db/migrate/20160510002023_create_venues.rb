@@ -8,6 +8,7 @@ class CreateVenues < ActiveRecord::Migration
       t.text :image
       t.string :type
       t.integer :user_id
+    
 
       t.timestamps null: false
     end

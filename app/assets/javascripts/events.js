@@ -13,16 +13,16 @@ $( document ).on('ready', function() {
           var templateFunction = Handlebars.compile(template);
 
           if (event.image == undefined) {
-            venueImage = "http://www.molotowcocktail.eu/images/slider-img4.jpg"
+            eventImage = "http://www.molotowcocktail.eu/images/slider-img4.jpg"
           } else {
-            venueImage = event.image
+            eventImage = event.image
           };
 
           var html = templateFunction({
             name: event.name,
             id: event.id,
             type: event.venue.venue_type,
-            image_url: venueImage,
+            image_url: eventImage,
             venue: event.venue.name,
             like_count: event.like_count
           });
