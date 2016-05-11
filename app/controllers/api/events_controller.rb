@@ -3,7 +3,8 @@ module Api
 
       def index
         events = Event.all
-        render json: events.to_json, status: 201
+        # render json: events.to_json, status: 201
+        render json: events.as_json
       end
 
       def new
