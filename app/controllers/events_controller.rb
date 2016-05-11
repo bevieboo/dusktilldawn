@@ -1,8 +1,19 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+   if params[:search_box] != ''
+         genre = Genre.find_by(name: params[:search_box])
+         if genre != nil
+            @events = Genre.events
+            render :index
+         else
+            redirect_to '/'
+         end
+    else
+        redirect_to '/'
+    end
   end
+
 
   def new
     # go to create new form
