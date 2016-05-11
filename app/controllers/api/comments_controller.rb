@@ -16,7 +16,7 @@ module Api
       end
 
       def show
-        @comment = Comment.find(params[:id])
+        comment = Comment.find(params[:id])
         render json: comment.to_json, status: 201
       end
 

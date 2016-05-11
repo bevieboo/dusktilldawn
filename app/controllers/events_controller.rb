@@ -1,14 +1,21 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Events.all
+    @events = Event.all
   end
 
   def new
+    # go to create new form
   end
 
   def create
-    # post from form
+    event = Event.new
+    event.name = params[:name]
+    event.image= params[:image]
+    event.event_time = params[:event_time]
+    event.genre_id = params[:genre_id]
+    event.venue_id = params[:venue_id]
+    event.save
   end
 
   def show
@@ -16,13 +23,18 @@ class EventsController < ApplicationController
   end
 
   def update
-  end
-
-  end
-
-  def delete
     @event = Event.find(params[:id])
-    @event.destroy
+    @event.name = params[:name]
+    @event.image= params[:image]
+    @event.event_time = params[:event_time]
+    @event.genre_id = params[:genre_id]
+    @event.venue_id = params[:venue_id]
+    @event.save
+  end
+
+  def destroy
+    event = Event.find(params[:id])
+    event.destroy
 
   end
 
