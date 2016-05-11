@@ -1,0 +1,48 @@
+<% if @user.user_type_id == 7 %>
+  <h1>Normal User</h1>
+
+<% elsif @user.user_type_id == 8 %>
+
+  <div class="profile-wrap">
+    <h1>Welcome <%= @user.name %></h1>
+
+  <% if @user.image == nil %>
+    <div class="profile-avatar">
+      <img src="/assets/Icon-user.png" alt="">
+    </div>
+  <% end %>
+
+  <button>Add Venue</button>
+  <button>Create Event</button>
+
+</div>
+
+<% end %>
+
+<script id="venues-template" type='text/x-handlebars-template'>
+
+  <div class="item" data-venue-id="{{ id }}">
+
+    <div class="venue-image">
+      <img src="{{ image_url }}">
+    </div>
+
+    <div class="venue-details-wrap">
+
+      <div class="venue-type">
+        <h2>{{ type }}</h2>
+      </div>
+
+      <div class="venue-name">
+        <h2>{{ name }}</h2>
+      </div>
+
+      <div class="venue-suburb">
+        <h2>{{ suburb }}</h2>
+      </div>
+
+    </div>
+
+  </div>
+
+</script>
