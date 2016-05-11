@@ -104,12 +104,57 @@
    venue3.save
 
   # genres table
-    genre = Genre.new
-    genre.name = 'music'
-    genre.save
-    genre2 = Genre.new
-    genre2.name = 'Hip-hop'
-    genre2.save
+   genre = Genre.new
+   genre.name = 'RnB'
+   genre.save
+
+   genre2 = Genre.new
+   genre2.name = 'Hip-hop'
+   genre2.save
+
+   genre3 = Genre.new
+   genre3.name = 'Drum n Bass'
+   genre3.save
+
+   genre4 = Genre.new
+   genre4.name = 'Blues'
+   genre4.save
+
+   genre5 = Genre.new
+   genre5.name = 'House'
+   genre5.save
+
+   genre6 = Genre.new
+   genre6.name = 'Rock'
+   genre6.save
+
+   genre7 = Genre.new
+   genre7.name = 'Jazz'
+   genre7.save
+
+   genre8 = Genre.new
+   genre8.name = 'Reggae'
+   genre8.save
+
+   genre9 = Genre.new
+   genre9.name = 'Dub Step'
+   genre9.save
+
+   genre10 = Genre.new
+   genre10.name = 'Country'
+   genre10.save
+
+   genre11 = Genre.new
+   genre11.name = 'Indie'
+   genre11.save
+
+   genre12 = Genre.new
+   genre12.name = 'Pop'
+   genre12.save
+
+   genre13 = Genre.new
+   genre13.name = 'Trance'
+   genre13.save
 
 
 #  events table
