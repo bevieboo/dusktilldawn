@@ -1,0 +1,139 @@
+
+
+
+<section id="wrapper">
+Click the allow button to let the browser find your location.
+
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCgv2nF9cSyCe8iy0UW7YtTiB3FpprBl4c&sensor=true">
+</script>
+
+<article id="mapcontainer" style="width: 100%;height: 75vh;">
+</article>
+
+
+
+<script>
+function whatever(position) {
+  console.log("position");
+}
+
+function success(position) {
+
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  console.log(coords);
+
+  var options = {
+    zoom: 15,
+    center: coords,
+    mapTypeControl: false,
+    navigationControlOptions: {
+      style: google.maps.NavigationControlStyle.SMALL
+    },
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+  var marker = new google.maps.Marker({
+      position: coords,
+      map: map,
+      title:"You are here!"
+  });
+
+  $.ajax({
+        url: 'http://localhost:3000/api/venues',
+        type: 'get',
+        dataType: 'JSON'
+      }).done(function(response){console.log(response)
+      for(i=0;i < response.length; i++) {
+      var latLng = new google.maps.LatLng(response[i].latitude,response[i].longitude);
+      var markerTwo = new google.maps.Marker({
+          position: latLng,
+          map: map,
+          title:response[i].name + ": Address: " + response[i].address
+      });
+
+
+    }
+      });
+
+/////DISPLAYING DATABASE COORDS ON MAP.. MAY BE AN ERROR WITH GEO CODER
+//  THIS IS CURRENTLY ONLY DISPLAYING THE LAST BAR ON THE LIST. NEED TO LOOP THROUGH ALL BARS TO GET THEM TO DISPLAY
+  // var latLng = new google.maps.LatLng(<%= @lat %>,<%= @long %>);
+  // var markerTwo = new google.maps.Marker({
+  //     position: latLng,
+  //     map: map,
+  //     title:"Precint Hotel"
+  // });
+
+
+
+  // var script = document.createElement('script');
+  //   // (In this example we use a locally stored copy instead.)
+  //   // script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
+  //   script.src = "http://localhost:3000/api/venues";
+  //   document.getElementsByTagName('head')[0].appendChild(script);
+  // }
+
+  // Loop through the results array and place a marker for each
+  // set of coordinates.
+//   window.eqfeed_callback = function(venues) {
+//     // for (var i = 0; i < venues.features.length; i++) {
+//       var coords = venues.features[i].geometry.coordinates;
+//       var latLng = new google.maps.LatLng(<%= @lat %>,<%= @long %>);
+//       var marker = new google.maps.Marker({
+//         position: latLng,
+//         map: map
+//       });
+//     // }
+}
+console.log(window.navigator);
+if (window.navigator.geolocation) {
+  window.navigator.geolocation.getCurrentPosition(success, whatever);
+} else {
+  error('Geo Location is not supported');
+}
+
+// var coords = new google.maps.LatLng(lat,long);
+// var marker;
+// function createMarker(coords, map, title){
+//   marker = new google.maps.Marker({
+//     position: coords,
+//     map: map,
+//     title: title
+//   });
+// }
+
+
+
+</script>
+
+
+
+</section>
+<script>
+
+// $(document).ready(function() {
+//     $.ajax({
+//       url: 'http://localhost:3000/api/venues',
+//       type: 'get',
+//       dataType: 'JSON'
+//     }).done(function(response){})
+
+//     console.log(response)
+//     response.forEach(function(coords){
+//     console.log(response[1].latitude)
+//     console.log(response[1].longitude)
+
+    // response.forEach(function(elem) {
+    //
+    //   for(i=0;i<response.length; i++){
+    // $('.list').append('<li>'+ response[i].latitude + ' and ' + response[i].longitude + '</li>')
+    //
+    //     };
+    //   });
+//     });
+//   });
+// })
+</script>
