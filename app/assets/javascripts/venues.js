@@ -79,7 +79,7 @@ $( document ).on('ready', function() {
     console.log(this);
   })
 
-  $('.back').on('click', function() {
+   $(document).on('click', '.back', function() {
     $('.list').empty();
     showVenues();
   })
