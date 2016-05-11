@@ -3,6 +3,8 @@ $( document ).on('ready', function() {
   function showEvents() {
     if($('#events-template').length){
 
+      console.log('hello');
+
       $.ajax({
         url: 'http://localhost:3000/api/events'
       }).done(function(events) {
@@ -77,7 +79,7 @@ $( document ).on('ready', function() {
 
    $(document).on('click', '.back', function() {
     $('.list').empty();
-    showVenues();
+    showEvents();
   })
 
 });
