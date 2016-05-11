@@ -188,19 +188,24 @@
                         image: "http://paulunderhill.com/wp-content/uploads/2013/01/music-photographer-festival-event-photography_93.jpg",
                         event_time: "2016-6-2 19:12:12",
                         genre_id: genre.id,
-                        venue_id: venue.id)
+                        venue_id: venue.id,
+                        description: "Every good week needs a dance break – make yours Revolver Wednesdays. Dan San (aka DJ Danielsan, from Aussie duo Koolism) is boss here, and he'll spin a huge range of dance music and, from time to time, invite special guests up to the decks.
+You might intend to stay for a bit of a dance, but time isn't really a thing that exists at Revolver – especially when the tunes are this good. Don't say we didn't warn you.")
 
    event = Event.create(name: "Revolver Friday",
                        image: "http://www.lasvegasweddingphotographer.net/wp-content/uploads/2014/06/las-vegas-bar-mitzvah-photographer.jpg",
                        event_time: "2016-5-20 18:12:12",
                        genre_id: genre2.id,
-                       venue_id: venue3.id)
+                       venue_id: venue3.id,
+                       description: "In need of a mid-week funtime fix?RUM-ble in the Jungle is for you!!!Man-about-town and celebrated vinyl collector Joey Elbows will be there to spin out the tunes")
 
    event = Event.create(name: "HAAAA Wednesday",
                        image: "http://www.bizbash.com/content/editorial/storyimg/big/spidypreview03.jpg",
                        event_time: "2016-6-1 20:12:12",
                        genre_id: genre2.id,
-                       venue_id: venue3.id)
+                       venue_id: venue3.id,
+                       description:"Escape the routine of the nine to five with a night party, which, incidentally, goes from nine(pm) to five(am).
+Be prepared to sweat the night away to hip-hop grooves from an ever-changing selection of Melbourne DJs. Free entry and $2 pots: sweet deal.")
 
 # artists table
     artist = Artist.new
