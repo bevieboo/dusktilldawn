@@ -9,8 +9,9 @@ module Api
 
       def create
         comment = Comment.new
-        comment = params[:user_id]
-        comment = params[:venue_id]
+        comment.user_id = session[:user_id]
+        comment.venue_id = params[:venue_id]
+        comment.content = params[:content]
         comment.save
         render json: comment.to_json, status: 201
       end
@@ -22,8 +23,9 @@ module Api
 
       def update
         comment = Comment.find(params[:id])
-        comment = params[:user_id]
-        comment = params[:venue_id]
+        comment.user_id = params[:user_id]
+        comment.venue_id = params[:venue_id]
+        comment.content = params[:content]
         comment.save
         render json: comment.to_json, status: 201
       end

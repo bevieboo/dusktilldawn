@@ -3,7 +3,7 @@ module Api
 
         def index
           @venues = Venue.all
-          render json: @venues.to_json, status: 201
+          render json: @venues.to_json(methods: :like_count), status: 201
         end
 
         def new
@@ -26,7 +26,10 @@ module Api
 
         def show
           @venue = Venue.find(params[:id])
-          render json: @venue.to_json, status: 201
+          # render json: @venue.to_json, status: 201
+          @comments = @venue.comments
+          data = {venue: @venue, comments: @comments}
+          render json: data.to_json, status: 201
         end
 
         def update

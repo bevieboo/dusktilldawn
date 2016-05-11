@@ -51,7 +51,7 @@
 #  venuse table
    venue = Venue.new
    venue.name = "Precint Hotel"
-   venue.address = "Richmond"
+   venue.address = "60 Swan St, Cremorne VIC 3121"
    venue.suburd = "Richmond"
    venue.postcode = 3000
    venue.venue_type = 'bar'
@@ -69,7 +69,7 @@
 
    venue2 = Venue.new
    venue2.name = "Precint Hotel"
-   venue2.address = "Richmond"
+   venue2.address = "60 Swan St, Cremorne VIC 3121"
    venue2.suburd = "Richmond"
    venue2.postcode = 3000
    venue2.venue_type = 'bar'
@@ -87,7 +87,7 @@
 
    venue3 = Venue.new
    venue3.name = "Precint Hotel"
-   venue3.address = "Richmond"
+   venue3.address = "60 Swan St, Cremorne VIC 3121"
    venue3.suburd = "Richmond"
    venue3.postcode = 3000
    venue3.venue_type = 'bar'
@@ -102,6 +102,29 @@
    dining and live entertainment to big screen sporting events over the weekend...
    Precinct Hotel is the place to be in Melbourne"
    venue3.save
+
+
+   venue4 = Venue.new
+   venue4.name = "Sorry Grandma"
+   venue4.address ="590 Little Bourke St, Melbourne VIC 3000"
+   venue4.suburd = "CBD"
+   venue4.postcode = 3000
+   venue4.venue_type = 'bar'
+   venue4.image = 'http://www.barsandnightclubs.com.au/assets/images/content/club/melbourne//Sorry%20Grandma%20-%20Melbourne%20CBD/Sorry%20Grandma%20-%20Melbourne%20CBD%20-%20Melbourne%20-%20Photo02.jpg'
+   venue4.user_id = user2.id
+   venue4.description = "Buzzing dance club featuring well-known DJs and themed events in an opulently decorated space."
+   venue4.save
+
+   venue5 = Venue.new
+   venue5.name = "Lustre Bar"
+   venue5.address ="1/252 Flinders Lane, Melbourne VIC 3000"
+   venue5.suburd = "CBD"
+   venue5.postcode = 3000
+   venue5.venue_type = 'bar'
+   venue5.image = 'http://www.bestclubsin.com/media/picture/listing/listingimages/image_365.jpg'
+   venue5.user_id = user2.id
+   venue5.description = "Intimate bar with crimson walls and a chilled vibe, for creative cocktails, desserts and live music."
+   venue5.save
 
   # genres table
 
@@ -165,19 +188,24 @@
                         image: "http://paulunderhill.com/wp-content/uploads/2013/01/music-photographer-festival-event-photography_93.jpg",
                         event_time: "2016-6-2 19:12:12",
                         genre_id: genre.id,
-                        venue_id: venue.id)
+                        venue_id: venue.id,
+                        description: "Every good week needs a dance break – make yours Revolver Wednesdays. Dan San (aka DJ Danielsan, from Aussie duo Koolism) is boss here, and he'll spin a huge range of dance music and, from time to time, invite special guests up to the decks.
+You might intend to stay for a bit of a dance, but time isn't really a thing that exists at Revolver – especially when the tunes are this good. Don't say we didn't warn you.")
 
    event = Event.create(name: "Revolver Friday",
                        image: "http://www.lasvegasweddingphotographer.net/wp-content/uploads/2014/06/las-vegas-bar-mitzvah-photographer.jpg",
                        event_time: "2016-5-20 18:12:12",
                        genre_id: genre2.id,
-                       venue_id: venue3.id)
+                       venue_id: venue3.id,
+                       description: "In need of a mid-week funtime fix?RUM-ble in the Jungle is for you!!!Man-about-town and celebrated vinyl collector Joey Elbows will be there to spin out the tunes")
 
    event = Event.create(name: "HAAAA Wednesday",
                        image: "http://www.bizbash.com/content/editorial/storyimg/big/spidypreview03.jpg",
                        event_time: "2016-6-1 20:12:12",
                        genre_id: genre2.id,
-                       venue_id: venue3.id)
+                       venue_id: venue3.id,
+                       description:"Escape the routine of the nine to five with a night party, which, incidentally, goes from nine(pm) to five(am).
+Be prepared to sweat the night away to hip-hop grooves from an ever-changing selection of Melbourne DJs. Free entry and $2 pots: sweet deal.")
 
 # artists table
     artist = Artist.new

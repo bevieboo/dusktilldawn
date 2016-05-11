@@ -31,6 +31,7 @@ class EventsController < ApplicationController
     event.event_time = params[:event_time]
     event.genre_id = params[:genre_id]
     event.venue_id = params[:venue_id]
+    event.description = params[:description]
     event.save
   end
 
@@ -58,6 +59,20 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     event.destroy
 
+  end
+
+  def near_you
+
+    #RUBY NOT NEEDED AS NOW USING AJAX API REQUEST IN ERB FILE
+    # venue = Venue.find_by(name: "Sorry Grandma")
+    # @long = venue.longitude
+    # @lat = venue.latitude
+
+    # venues = Venue.all
+    # venues.each do |venue|
+    #   @long = venue.longitude
+    #   @lat = venue.latitude
+    # end
   end
 
 end

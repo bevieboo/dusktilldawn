@@ -31,7 +31,7 @@ gem 'geocoder'
 gem 'pikaday-gem', '~> 1.4'
 gem 'momentjs-rails'
 
-
+gem 'rack-cors', :require => 'rack/cors'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

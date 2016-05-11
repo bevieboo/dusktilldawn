@@ -9,29 +9,26 @@
     </div>
 
     <div class="venue-details-wrap">
-
       <div class="venue-type">
         <h2>{{ type }}</h2>
       </div>
 
       <div class="venue-name">
-        <h2>{{ name }}</h2>
+        <h2 class='venue_like_name'>{{ name }}</h2>
+        <span class='like_count'>{{ like_count }}</span>
       </div>
 
       <div class="venue-suburb">
-        <h2>{{ suburb }}</h2>
+        <h2 class='venue_like_name'>{{ suburb }}</h2>
+        <img class='likeBtn' src="/assets/thumbs-up-08.jpg" alt="" />
       </div>
-
     </div>
-    <!-- <div class="like">
-      <h2>Likes</h2>
-      <span class="right likes">{{ like_count }}</span>
-    </div> -->
 
   </div>
 
 </script>
 
+<!--======================below is venue show template ========================  -->
 <script id="venue-details-template" type='text/x-handlebars-template'>
 
   <div class="item-detail" data-venue-id="{{ id }}">
@@ -64,12 +61,25 @@
 
     </div>
 
+
   </div>
 
   <div class="back">BACK</div>
-    <!-- <div class="like">
-      <h2>Likes</h2>
-      <span class="right likes">{{ like_count }}</span>
-    </div> -->
-
 </script>
+
+    <!--====================comment part====================  -->
+
+    <section class='comments-part'>
+        <h4>Comments:</h4>
+        <article class='comments-list'>
+
+        <script id="comments-template" type='text/x-handlebars-template'>
+        <p>{{content}}   <span> ---By {{user_name}}<span></p>
+        </script>
+
+        </article>
+
+        <textarea id="input_comment" rows="8" cols='40'></textarea>
+        <br/>
+        <button class="postBtn">Post It</button>
+    </section>
