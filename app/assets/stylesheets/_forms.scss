@@ -35,20 +35,15 @@
   margin: 20px auto;
 }
 
-.list {
-  text-align: center;
-  width: 100%;
-  margin: 40px 0;
-}
-
 .item {
-  width: 25%;
+  width: 30%;
   display: inline-block;
-  margin: 10px 20px;
+  margin: 10px 1.5%;
   border: 1px solid black;
   position: relative;
   background-color: rgba(255,255,255,0.2);
   border-radius: 6px;
+  float: left;
 }
 .item-detail {
   width: 60%;

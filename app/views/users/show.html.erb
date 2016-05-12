@@ -19,10 +19,10 @@
 
   </div>
 
-  <div class="user-venue-wrap">
-    <h2 class="">Manage your location</h2>
+  <div class="user-venue-wrap group">
+    <h2 class="user-h2">Manage your location</h2>
     <% @venues.each do |venue| %>
-      <div class="item">
+      <div class="item-user">
         <div class="venue-image">
           <% if venue.image == nil %>
             <img src="http://www.molotowcocktail.eu/images/slider-img4.jpg">

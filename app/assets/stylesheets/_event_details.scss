@@ -12,9 +12,6 @@
 .event-name {
   color: $sunset-orange;
 }
-.venue-details-wrap {
-  text-align: center;
-}
 
 .map {
   width: 50%;
@@ -25,4 +22,12 @@
   vertical-align: top;
   display: inline-block;
   width: 49%;
+}
+
+.venue-details-name {
+  text-align: center;
+}
+
+.events-page {
+  line-height: 2;
 }
