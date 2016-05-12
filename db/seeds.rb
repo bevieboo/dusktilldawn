@@ -126,6 +126,17 @@
    venue5.description = "Intimate bar with crimson walls and a chilled vibe, for creative cocktails, desserts and live music."
    venue5.save
 
+   venue6 = Venue.new
+   venue6.name = "Berlin Bar"
+   venue6.address ="16 Corrs Ln, Melbourne VIC 3000"
+   venue6.suburd = "CBD"
+   venue6.postcode = 3000
+   venue6.venue_type = 'bar'
+   venue6.image = 'http://jfkgwl.corednacdn.com/web_images/image_gallery/album5028_39333_berlin-bar-cbd-best-bars-melbourne-cocktail-hidden-laneway-wine-cool-lounge-002.jpg'
+   venue6.user_id = user1.id
+   venue6.description = "Split-space East/West-themed bar with plush banquettes, bunker-style decor and bathtub tables."
+   venue6.save
+
   # genres table
 
 
