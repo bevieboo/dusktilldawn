@@ -138,16 +138,86 @@
    venue6.save
 
    venue7 = Venue.new
-   venue7.name = "The Alchemist"
-   venue7.address ="361 Brunswick St, Fitzroy VIC 3065"
-   venue7.suburd = "Fitzroy"
-   venue7.postcode = 3065
+   venue7.name = "Baroqhouse"
+   venue7.address ="9-13 Drewery Ln, Melbourne VIC 3000"
+   venue7.suburd = "CBD"
+   venue7.postcode = 3000
    venue7.venue_type = 'bar'
-   venue7.image = 'http://www.cityfied.com.au/uploads/thealchemistbar-7940.jpg'
+   venue7.image = 'http://assets.venuemob.com.au/venues/baroq-house/photos/baroq-house-function-venue-entire-venue-4.jpg'
    venue7.user_id = user2.id
-   venue7.description = "Cocktails and share plates in a lavish space with vintage lounges and black-and-white prints."
+   venue7.description = "Good chance of seeing some celebs popping in!"
    venue7.save
 
+   venue8 = Venue.new
+   venue8.name = "Captain Melville"
+   venue8.address ="34 Franklin St, Melbourne VIC 3000"
+   venue8.suburd = "CBD"
+   venue8.postcode = 3000
+   venue8.venue_type = 'bar'
+   venue8.image = 'http://bokitty.com/wp-content/uploads/2014/04/imgp4991.jpg'
+   venue8.user_id = user2.id
+   venue8.description = "Smelly, dirty, funky and a whole lot of fun... your feet might stick to the floor, so just keep dancing!"
+   venue8.save
+
+   venue9 = Venue.new
+   venue9.name = "Electric LadyLand"
+   venue9.address ="1/265-267 Chapel St, Melbourne VIC 3181"
+   venue9.suburd = "Prahran"
+   venue9.postcode = 3181
+   venue9.venue_type = 'bar'
+   venue9.image = 'http://luxmelbourne.com/wp-content/uploads/2014/04/lux_prahran_nightclub_prahran_bar_4.jpg'
+   venue9.user_id = user2.id
+   venue9.description = "DJs and seasonal cocktails in a vast, sleek lounge with moody lighting, red sofas and a terrace."
+   venue9.save
+
+   venue10 = Venue.new
+   venue10.name = "Chaise Lounge"
+   venue10.address ="105 Queen St, Melbourne VIC 3000"
+   venue10.suburd = "CBD"
+   venue10.postcode = 3000
+   venue10.venue_type = 'bar'
+   venue10.image = 'http://www.barsandnightclubs.com.au/assets/images/content/club/melbourne/The%20Moser%20Room%20-%20Melbourne%20South%20-%20Melbourne_original.jpg'
+   venue10.user_id = user2.id
+   venue10.description = "Basement joint with red walls and opulent vintage furniture, hosting hip-hop and R&B nights."
+   venue10.save
+
+   venue11 = Venue.new
+   venue11.name = "The Evelyn Hotel"
+   venue11.address ="351 Brunswick St, Fitzroy VIC 3065"
+   venue11.suburd = "Fitzroy"
+   venue11.postcode = 3065
+   venue11.venue_type = 'bar'
+   venue11.image = 'http://evelynhotel.com.au/wp-content/uploads/2015/04/Bandroom2.jpg'
+   venue11.user_id = user2.id
+   venue11.description = "Longtime bar and live music venue hosting regular gigs and stand-up comedy in a grungy space."
+   venue11.save
+
+   venue12 = Venue.new
+   venue12.name = "The Drunken Poet"
+   venue12.address ="65 Peel Street, West Melbourne VIC 3003"
+   venue12.suburd = "West Melbourne"
+   venue12.postcode = 3003
+   venue12.venue_type = 'bar'
+   venue12.image = 'https://media.timeout.com/images/103000638/image.jpg'
+   venue12.user_id = user2.id
+   venue12.description = "Irish music, poetry and Guinness, plus trivia, in a snug pub hung with portraits of famous authors."
+   venue12.save
+
+   venue13
+   venue13.name = "The Alchemist"
+   venue13.address ="361 Brunswick St, Fitzroy VIC 3065"
+   venue13.suburd = "Fitzroy"
+   venue13.postcode = 3065
+   venue13.venue_type = 'bar'
+   venue13.image = 'http://www.cityfied.com.au/uploads/thealchemistbar-7940.jpg'
+   venue13.user_id = user2.id
+   venue13.description = "Cocktails and share plates in a lavish space with vintage lounges and black-and-white prints."
+   venue13.save
+
+
+
+
+>>>>>>> master
   # genres table
 
 
@@ -206,13 +276,12 @@
 
 
 #  events table
-   event = Event.create(name: "Revolver Wednesday",
-                        image: "http://paulunderhill.com/wp-content/uploads/2013/01/music-photographer-festival-event-photography_93.jpg",
+   event = Event.create(name: "Down & Dirty",
+                        image: "http://www.clubsguide.com.au/images/clubs/nights/954.jpg",
                         event_time: "2016-6-2 19:12:12",
                         genre_id: genre.id,
-                        venue_id: venue.id,
-                        description: "Every good week needs a dance break – make yours Revolver Wednesdays. Dan San (aka DJ Danielsan, from Aussie duo Koolism) is boss here, and he'll spin a huge range of dance music and, from time to time, invite special guests up to the decks.
-You might intend to stay for a bit of a dance, but time isn't really a thing that exists at Revolver – especially when the tunes are this good. Don't say we didn't warn you.")
+                        venue_id: venue6.id,
+                        description: "Get down, and get dirty! Throw away your shirty... Ok, maybe not till later in the evening. But we will set the mood and you'll bounce to our tunes, all night long... Don't say we didn't warn you.")
 
    event = Event.create(name: "Revolver Friday",
                        image: "http://www.lasvegasweddingphotographer.net/wp-content/uploads/2014/06/las-vegas-bar-mitzvah-photographer.jpg",
@@ -226,8 +295,53 @@ You might intend to stay for a bit of a dance, but time isn't really a thing tha
                        event_time: "2016-6-1 20:12:12",
                        genre_id: genre2.id,
                        venue_id: venue3.id,
-                       description:"Escape the routine of the nine to five with a night party, which, incidentally, goes from nine(pm) to five(am).
-Be prepared to sweat the night away to hip-hop grooves from an ever-changing selection of Melbourne DJs. Free entry and $2 pots: sweet deal.")
+                       description:"Escape the routine of the nine to five with a night party, which, incidentally, goes from nine(pm) to five(am). Be prepared to sweat the night away to hip-hop grooves from an ever-changing selection of Melbourne DJs. Free entry and $2 pots: sweet deal.")
+
+  event = Event.create(name: "Trance Night",
+                       image: "http://ozedm.com/wp-content/uploads/2014/12/asot-700-australia-sydney-melbourne-banner-armin-van-buuren.jpg",
+                       event_time: "2016-6-2 19:12:12",
+                       genre_id: genre.id,
+                       venue_id: venue9.id,
+                       description: "Get down, and get dirty! Throw away your shirty... Ok, maybe not till later in the evening. But we will set the mood and you'll bounce to our tunes, all night long... Don't say we didn't warn you.")
+
+  event = Event.create(name: "Revolver Wednesday",
+                         image: "http://paulunderhill.com/wp-content/uploads/2013/01/music-photographer-festival-event-photography_93.jpg",
+                         event_time: "2016-6-2 19:12:12",
+                         genre_id: genre.id,
+                         venue_id: venue.id,
+                         description: "Every good week needs a dance break – make yours Revolver Wednesdays. Dan San (aka DJ Danielsan, from Aussie duo Koolism) is boss here, and he'll spin a huge range of dance music and, from time to time, invite special guests up to the decks.
+  You might intend to stay for a bit of a dance, but time isn't really a thing that exists at Revolver – especially when the tunes are this good. Don't say we didn't warn you.")
+
+  event = Event.create(name: "Twisted Audio",
+                          image: "http://www.twistedaudio.com/wp/images/TwistedAudioPrehistoricTreatsPt2-web01-13-248x350.jpg",
+                          event_time: "2016-6-2 19:12:12",
+                          genre_id: genre13.id,
+                          venue_id: venue8.id,
+                          description: " The underground aficionados of the music world look to the South East for the creme de la creme in DnB. Its Twisted.")
+
+  event = Event.create(name: "Rythmn Nation",
+                          image: "http://www.chaiselounge.com.au/wp-content/uploads/2015/05/RN2014BIG.jpg",
+                          event_time: "2016-6-2 19:12:12",
+                          genre_id: genre2.id,
+                          venue_id: venue10.id,
+                          description: " Old Skool vs New Skool, Hip to the hop and you don't stop...")
+
+  event = Event.create(name: "Thrash Upon The Wicked",
+                          image: "http://www.metalobsession.net/wp-content/uploads/2015/10/in-malices-wake-thrash-upon-the-wicked-2015.jpg",
+                          event_time: "2016-6-2 19:12:12",
+                          genre_id: genre6.id,
+                          venue_id: venue11.id,
+                          description: "A delightful evening of breathtakingly elegant and wonderfully inspiring compositions. A must for the misunderstood and dishenfranchised young person")
+
+  event = Event.create(name: "Jazz Wanker Evening - Melbourne 'Jizz Jazz'",
+                          image: "https://eventsimg.blob.core.windows.net/banners/66222fa0b6447a9c525d43812ac1f2d2",
+                          event_time: "2016-6-2 19:12:12",
+                          genre_id: genre7.id,
+                          venue_id: venue5.id,
+                          description: "Get together and get smoooooooth. Nice! Bring tissues.")
+
+
+
 
 # artists table
     artist = Artist.new

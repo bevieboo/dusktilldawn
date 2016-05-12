@@ -66,19 +66,16 @@ class EventsController < ApplicationController
     event.destroy
 
   end
+  #RUBY NOT NEEDED AS NOW USING AJAX API REQUEST IN ERB FILE
+  # venue = Venue.find_by(name: "Sorry Grandma")
+  # @long = venue.longitude
+  # @lat = venue.latitude
 
-  def near_you
+  # venues = Venue.all
+  # venues.each do |venue|
+  #   @long = venue.longitude
+  #   @lat = venue.latitude
+  # end
 
-    #RUBY NOT NEEDED AS NOW USING AJAX API REQUEST IN ERB FILE
-    # venue = Venue.find_by(name: "Sorry Grandma")
-    # @long = venue.longitude
-    # @lat = venue.latitude
-
-    # venues = Venue.all
-    # venues.each do |venue|
-    #   @long = venue.longitude
-    #   @lat = venue.latitude
-    # end
-  end
 
 end
