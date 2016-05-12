@@ -76,7 +76,20 @@ $( document ).on('ready', function() {
       var $newDiv = $(html);
       $('.list').append($newDiv);
 
-        // ==============show all comments of this venue ==============
+      //==================show all events of this venue ===================
+         
+
+
+
+
+
+
+
+
+
+
+
+        // ==============show all comments of this venue ===================
       $.each(data.comments, function(index, comment){
           var commentTemplate = Handlebars.compile($('#comments-template').html());
           var commentHtml = commentTemplate({

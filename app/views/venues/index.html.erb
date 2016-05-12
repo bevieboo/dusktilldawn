@@ -1,11 +1,3 @@
-<!-- <script type="text/javascript">
-   var login = <% if current_user %>"<%= true %>"<% else %>"<%= false %>"<% end %>
-   console.log("Session id: ", login);
-   if (login == "false"){
-      console.log("Hiding input.");
-      $('#input_comment').hide();
-   };
-</script> -->
 
 <div class="list"></div>
 
@@ -88,8 +80,18 @@
 
         </article>
 
-
-        <textarea id="input_comment" rows="8" cols='40'></textarea>
-        <br/>
-        <button class="postBtn">Post It</button>
+        <div id='input_comment_part'>
+          <textarea id="input_comment" rows="8" cols='40'></textarea>
+          <br/>
+          <button class="postBtn">Post It</button>
+        </div>
     </section>
+
+  <script type="text/javascript">
+     var login = <% if current_user %>"<%= true %>"<% else %>"<%= false %>"<% end %>
+     console.log("Session id: ", login);
+     if (login == "false"){
+        console.log("Hiding input.");
+        $('#input_comment_part').hide();
+     };
+  </script>
