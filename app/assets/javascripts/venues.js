@@ -77,7 +77,18 @@ $( document ).on('ready', function() {
       $('.list').append($newDiv);
 
       //==================show all events of this venue ===================
-         
+      $.each(data.events, function(index, event){
+          var eventTemplate = Handlebars.compile($('#events-template').html());
+          var eventHtml = eventTemplate({
+             event_id: event.id,
+             event_image: event.image,
+             event_name: event.name
+          });
+          var $newEvent = $(eventHtml);
+          $('.events-list').append($newEvent);
+      });
+
+
 
 
 

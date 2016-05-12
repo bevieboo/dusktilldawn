@@ -68,6 +68,22 @@
   <div class="back">BACK</div>
 </script>
 
+
+  <!--=====================show all events of this venue====================  -->
+  <section class='events-part'>
+      <h4>Events:</h4>
+      <article class='events-list'>
+
+        <script id="events-template" type='text/x-handlebars-template'>
+           <div class="event-item" data-event-id={{event_id}}>
+                <img src="{{event_image}}">
+                <h5>{{event_name}}</h5>
+           </div>
+        </script>
+
+      </article>
+  </section>
+
     <!--====================comment part====================  -->
 
     <section class='comments-part'>
