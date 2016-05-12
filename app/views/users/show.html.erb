@@ -1,7 +1,7 @@
-<% if @user.user_type_id == 9 %>
+<% if @user.user_type_id == 11 %>
   <h1>Normal User</h1>
 
-<% elsif @user.user_type_id == 10 %>
+<% elsif @user.user_type_id == 12 %>
 
   <div class="profile-wrap">
     <h1>Welcome <%= @user.name %></h1>
@@ -82,6 +82,11 @@
     <div class="input">
       <label>Event Time</label>
       <input type="text" name="time" class="signup-input timepicker">
+    </div>
+
+    <div class="input">
+      <label>Description</label></br>
+      <textarea name="description" placeholder="Tell us more about your event!"></textarea>
     </div>
 
     <button>Create Event</button>
