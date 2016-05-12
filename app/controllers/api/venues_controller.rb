@@ -26,9 +26,23 @@ module Api
 
         def show
           @venue = Venue.find(params[:id])
+
           # render json: @venue.to_json, status: 201
           @comments = @venue.comments
-          data = {venue: @venue, comments: @comments}
+
+          commentsOutput = []
+          @comments.each do |comment|
+             each_comment = {}
+             each_comment['content'] = comment.content
+             if comment.user_id != ''
+              user = User.find(comment.user_id)
+              each_comment['user_name'] = user.name
+             else
+              each_comment['user_name'] = ''
+             end
+             commentsOutput.push(each_comment)
+          end
+          data = {venue: @venue, comments: commentsOutput}
           render json: data.to_json, status: 201
         end
 
