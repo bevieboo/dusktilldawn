@@ -35,3 +35,26 @@
   margin-right: auto;
   width: 60%;
 }
+
+.events-part{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  text-align: center;
+}
+
+.events-part h2{
+  margin-bottom: 10px;
+}
+
+.event-item{
+  display:inline-block;
+  width: 20%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.event-item h5{
+  margin: 5px;
+}
