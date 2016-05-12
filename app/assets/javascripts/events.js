@@ -27,7 +27,7 @@ $(document).on('ready', function() {
             like_count: event.like_count
           });
 
-          $($newDiv).append($newLink);
+          var $newDiv = $(html);
           $('.list').append($newDiv);
 
         });
