@@ -70,6 +70,24 @@
     </div>
 
     <div class="input">
+      <label>Venue</label>
+      <select name="venue_id">
+        <% @venues.each do |venue| %>
+        <option value="<%= venue.id %>"><%= venue.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="input">
+      <label>Genre</label>
+      <select name="genre_id">
+        <% @genres.each do |genre| %>
+        <option value="<%= genre.id %>"><%= genre.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="input">
       <label>Poster</label>
       <input type="file" name="image" class="avatar-input">
     </div>
