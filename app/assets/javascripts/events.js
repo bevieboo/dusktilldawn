@@ -27,12 +27,6 @@ $(document).on('ready', function() {
             like_count: event.like_count
           });
 
-          var $newDiv = $(html);
-          var $newLink = $("<a />", {
-            href : '/events/' + event.id,
-            text : "Click for details.."
-          });
-
           $($newDiv).append($newLink);
           $('.list').append($newDiv);
 

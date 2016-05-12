@@ -4,22 +4,22 @@
     <% @events.each do |event| %>
 
       <a href="/events/<%=event.id%>">
-          <span class="item" data-event-id="<%=event.id%>">
-            <span class="event-image">
+          <div class="item" data-event-id="<%=event.id%>">
+            <div class="event-image">
               <img src="<%=event.image%>">
-            </span>
-            <span class="venue-details-wrap">
-              <span class="<%=event.genre.name%>">
+            </div>
+            <div class="venue-details-wrap">
+              <div class="<%=event.genre.name%>">
                 <h2></h2>
-              </span>
-              <span class="event-time">
+              </div>
+              <div class="event-time">
                 <h2><%=event.event_time%></h2>
-              </span>
-              <span class="event-venue">
+              </div>
+              <div class="event-venue">
                 <h2><%=event.venue.name%></h2>
-              </span>
-            </span>
-          </span>
+              </div>
+            </div>
+          </div>
       </a>
     <%end%>
    </div>
