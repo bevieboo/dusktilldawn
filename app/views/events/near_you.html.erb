@@ -1,6 +1,6 @@
 
 
-
+<style>#content { color: black;} #popUpImg{width: 300px;} infowindow</style>
 <section id="wrapper">
 Click the allow button to let the browser find your location.
 
@@ -35,59 +35,58 @@ function success(position) {
   };
   var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
 
+// users position
+  var image = "https://learningcenter.nsta.org/images/icon_person_small.gif"
+
   var marker = new google.maps.Marker({
       position: coords,
       map: map,
+      icon: image,
       title:"You are here!"
+  });
+  var userLocationText = '<div id="content">'+'You are here!'+'</div>';
+  var userLocInfoWindow = new google.maps.InfoWindow({
+    content: userLocationText,
+    maxWidth: 300
+  });marker.addListener('mouseover', function() {
+    userLocInfoWindow.open(map, marker);
   });
 
   $.ajax({
-        url: 'http://localhost:3000/api/venues',
-        type: 'get',
-        dataType: 'JSON'
-      }).done(function(response){console.log(response)
-      for(i=0;i < response.length; i++) {
-      var latLng = new google.maps.LatLng(response[i].latitude,response[i].longitude);
-      var markerTwo = new google.maps.Marker({
-          position: latLng,
-          map: map,
-          title:response[i].name + ": Address: " + response[i].address
+    url: 'http://localhost:3000/api/venues',
+    type: 'get',
+    dataType: 'JSON'
+  }).done(function(response){
+    console.log(response)
+
+    response.forEach(function(venue) {
+      var latLng = new google.maps.LatLng(venue.latitude, venue.longitude);
+
+      var markerBar = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        title: venue.name + ": Address: " + venue.address
       });
 
+      //FOR THE INFO WINDOW ABOUT THE BAR
+      var contentString = '<div id="content">'+
+        '<h1>' + venue.name +'</h1>'+ '<h5>'+ venue.address+'</h5>'+
+        '<div id="bodyContent">'+ '<img id="popUpImg" src='+ venue.image + '>'+
+        '<p>' + venue.description + '</p>'+ '</div>';
 
-    }
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 300
       });
+      markerBar.addListener('mouseover', function() {
+        infowindow.open(map, markerBar);
+      });
+      (map,markerBar);
 
-/////DISPLAYING DATABASE COORDS ON MAP.. MAY BE AN ERROR WITH GEO CODER
-//  THIS IS CURRENTLY ONLY DISPLAYING THE LAST BAR ON THE LIST. NEED TO LOOP THROUGH ALL BARS TO GET THEM TO DISPLAY
-  // var latLng = new google.maps.LatLng(<%= @lat %>,<%= @long %>);
-  // var markerTwo = new google.maps.Marker({
-  //     position: latLng,
-  //     map: map,
-  //     title:"Precint Hotel"
-  // });
-
-
-
-  // var script = document.createElement('script');
-  //   // (In this example we use a locally stored copy instead.)
-  //   // script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
-  //   script.src = "http://localhost:3000/api/venues";
-  //   document.getElementsByTagName('head')[0].appendChild(script);
-  // }
-
-  // Loop through the results array and place a marker for each
-  // set of coordinates.
-//   window.eqfeed_callback = function(venues) {
-//     // for (var i = 0; i < venues.features.length; i++) {
-//       var coords = venues.features[i].geometry.coordinates;
-//       var latLng = new google.maps.LatLng(<%= @lat %>,<%= @long %>);
-//       var marker = new google.maps.Marker({
-//         position: latLng,
-//         map: map
-//       });
-//     // }
+    });
+  });
 }
+
 console.log(window.navigator);
 if (window.navigator.geolocation) {
   window.navigator.geolocation.getCurrentPosition(success, whatever);
@@ -95,45 +94,9 @@ if (window.navigator.geolocation) {
   error('Geo Location is not supported');
 }
 
-// var coords = new google.maps.LatLng(lat,long);
-// var marker;
-// function createMarker(coords, map, title){
-//   marker = new google.maps.Marker({
-//     position: coords,
-//     map: map,
-//     title: title
-//   });
-// }
-
-
 
 </script>
 
 
 
 </section>
-<script>
-
-// $(document).ready(function() {
-//     $.ajax({
-//       url: 'http://localhost:3000/api/venues',
-//       type: 'get',
-//       dataType: 'JSON'
-//     }).done(function(response){})
-
-//     console.log(response)
-//     response.forEach(function(coords){
-//     console.log(response[1].latitude)
-//     console.log(response[1].longitude)
-
-    // response.forEach(function(elem) {
-    //
-    //   for(i=0;i<response.length; i++){
-    // $('.list').append('<li>'+ response[i].latitude + ' and ' + response[i].longitude + '</li>')
-    //
-    //     };
-    //   });
-//     });
-//   });
-// })
-</script>
