@@ -1,7 +1,4 @@
 // making the background img responsive
-.background {
-  background-position: center;
-}
 // nav
 #i-nav {
   display: none;
@@ -46,6 +43,9 @@ a :hover {
 
 @media screen and (max-width: 980px) {
 
+  .background {
+    background-position: center;
+  }
   .logo {
     width: 200px;
 
