@@ -1,11 +1,3 @@
-<!-- <script type="text/javascript">
-   var login = <% if current_user %>"<%= true %>"<% else %>"<%= false %>"<% end %>
-   console.log("Session id: ", login);
-   if (login == "false"){
-      console.log("Hiding input.");
-      $('#input_comment').hide();
-   };
-</script> -->
 
 <div class="list"></div>
 
@@ -76,6 +68,22 @@
   <div class="back">BACK</div>
 </script>
 
+
+  <!--=====================show all events of this venue====================  -->
+  <section class='events-part'>
+      <h4>Events:</h4>
+      <article class='events-list'>
+
+        <script id="events-template" type='text/x-handlebars-template'>
+           <div class="event-item" data-event-id={{event_id}}>
+                <img src="{{event_image}}">
+                <h5>{{event_name}}</h5>
+           </div>
+        </script>
+
+      </article>
+  </section>
+
     <!--====================comment part====================  -->
 
     <section class='comments-part'>
@@ -88,8 +96,18 @@
 
         </article>
 
-
-        <textarea id="input_comment" rows="8" cols='40'></textarea>
-        <br/>
-        <button class="postBtn">Post It</button>
+        <div id='input_comment_part'>
+          <textarea id="input_comment" rows="8" cols='40'></textarea>
+          <br/>
+          <button class="postBtn">Post It</button>
+        </div>
     </section>
+
+  <script type="text/javascript">
+     var login = <% if current_user %>"<%= true %>"<% else %>"<%= false %>"<% end %>
+     console.log("Session id: ", login);
+     if (login == "false"){
+        console.log("Hiding input.");
+        $('#input_comment_part').hide();
+     };
+  </script>

@@ -27,6 +27,8 @@ module Api
         def show
           @venue = Venue.find(params[:id])
 
+          # find all events belongs to this venue
+          @events = @venue.events
           # render json: @venue.to_json, status: 201
           @comments = @venue.comments
 
@@ -42,7 +44,7 @@ module Api
              end
              commentsOutput.push(each_comment)
           end
-          data = {venue: @venue, comments: commentsOutput}
+          data = {venue: @venue, comments: commentsOutput, events: @events}
           render json: data.to_json, status: 201
         end
 
