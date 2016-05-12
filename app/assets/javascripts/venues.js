@@ -45,7 +45,7 @@ $( document ).on('ready', function() {
   $('.list').on('click', '.venue-image', function(event) {
                          // '.item'
     $('.list').empty();
-    $('.events-list').empty();
+    // $('.events-list').empty();
     var $item = $(event.target).closest('.item');
     var venueId = $item.data('venue-id');
     console.log(venueId);
