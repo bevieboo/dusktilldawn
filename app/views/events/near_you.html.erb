@@ -1,6 +1,6 @@
 
 
-<style>#content { color: black;} #popUpImg{width: 300px;}</style>
+<style>#content { color: black;} #popUpImg{width: 300px;} infowindow</style>
 <section id="wrapper">
 Click the allow button to let the browser find your location.
 
@@ -44,6 +44,13 @@ function success(position) {
       icon: image,
       title:"You are here!"
   });
+  var userLocationText = '<div id="content">'+'You are here!'+'</div>';
+  var userLocInfoWindow = new google.maps.InfoWindow({
+    content: userLocationText,
+    maxWidth: 300
+  });marker.addListener('mouseover', function() {
+    userLocInfoWindow.open(map, marker);
+  });
 
   $.ajax({
     url: 'http://localhost:3000/api/venues',
@@ -63,17 +70,19 @@ function success(position) {
 
       //FOR THE INFO WINDOW ABOUT THE BAR
       var contentString = '<div id="content">'+
-        '<h1>' + venue.name +'</h1>'+
+        '<h1>' + venue.name +'</h1>'+ '<h5>'+ venue.address+'</h5>'+
         '<div id="bodyContent">'+ '<img id="popUpImg" src='+ venue.image + '>'+
-        '<p>' + venue.description + '</p>'+'</div>';
+        '<p>' + venue.description + '</p>'+ '</div>';
 
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
         maxWidth: 300
       });
-      markerBar.addListener('click', function() {
+      markerBar.addListener('mouseover', function() {
         infowindow.open(map, markerBar);
       });
+      (map,markerBar);
+
     });
   });
 }
