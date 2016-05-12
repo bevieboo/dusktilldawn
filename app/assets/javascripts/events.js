@@ -32,11 +32,11 @@ $( document ).on('ready', function() {
 
 
           var $newDiv = $(html);
-          var newLink = $("<a />", {
-            href : 'events' + $(data-event-id),
-            text : "Click for details.."
-          }).append($($newDiv));
-
+          // var newLink = $("<a />", {
+          //   href : 'events' + $(data-event-id),
+          //   text : "Click for details.."
+          // }).append($($newDiv));
+          $(".list").append($newDiv);
         });
       });
     };
