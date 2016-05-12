@@ -1,8 +1,7 @@
 $( document ).on('ready', function() {
 
   $('.add-venue').click(function() {
-    console.log('hello');
-    console.log(this);
+    $('.user-venue-wrap').hide();
 
     if ($('.add-venue-form').hasClass('show')) {
       $('.add-venue-form').removeClass('show');
@@ -14,11 +13,13 @@ $( document ).on('ready', function() {
       $('.add-event-form').removeClass('show');
     };
 
+    if (!$('.add-venue-form').hasClass('show') && !$('.add-event-form').hasClass('show')) {
+      $('.user-venue-wrap').show();
+    };
   });
 
   $('.add-event').click(function() {
-    console.log('hello');
-    console.log(this);
+    $('.user-venue-wrap').hide();
 
     if ($('.add-event-form').hasClass('show')) {
       $('.add-event-form').removeClass('show');
@@ -30,6 +31,9 @@ $( document ).on('ready', function() {
       $('.add-venue-form').removeClass('show');
     };
 
+    if (!$('.add-venue-form').hasClass('show') && !$('.add-event-form').hasClass('show')) {
+      $('.user-venue-wrap').show();
+    };
   });
-
+  
 })

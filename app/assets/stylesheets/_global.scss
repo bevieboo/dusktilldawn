@@ -74,14 +74,16 @@ input {
   border: 1px solid lightgrey;
   padding: 10px;
   font-size: 14px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: lightgrey;
   border-radius: 6px;
   outline: 0;
   margin-bottom: 20px;
+  transition: 0.3s;
 }
 
 input:focus {
   border-color: $sunset-orange;
+  background-color: white;
 }
 
 .venue-type h2 {
@@ -117,5 +119,7 @@ textarea {
 }
 
 .list {
-  float: left;
+  text-align: center;
+  width: 100%;
+  margin: 40px auto;
 }
