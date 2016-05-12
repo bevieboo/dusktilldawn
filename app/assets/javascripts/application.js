@@ -22,3 +22,4 @@
 //= require index
 //= require facebook_login
 //= require create_profile
+//= require dropdown_menu.js

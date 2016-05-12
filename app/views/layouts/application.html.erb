@@ -12,34 +12,41 @@
 
   <header class='header-wrap'>
     <div class="menu-wrapper">
-      <a href="/"><div class="logo"></div></a>
-      <ul class="menu">
-        <li><a href="/artists">Artists</a></li>
-        <li><a href="/venues">Venues</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/near_you">Near You</a></li>
-        <li><a href="">Contact</a></li>
-        <!-- <li><div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div></li>
-        <li id='status'></li> -->
-        <% if logged_in? %>
-        <!-- Avatar & Username -->
-        <li><a href="/users/<%= session[:user_id] %>" class="header-link login-name"><img src="/assets/user.png" class="login-avatar"></a></li>
 
-        <!-- Log Out Button -->
-        <li><form action="/sessions" method="post" class="logout-form">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <input type="hidden" value="delete" name="_method">
-          <button class="logout-button">Log Out</button>
-        </form></li>
+        <a href="/"><div class="logo"></div></a>
+        <nav id="nav" role="navigation">
+          <ul class="menu">
+            <li><a href="/artists">Artists</a></li>
+            <li><a href="/venues">Venues</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/near_you">Near You</a></li>
+            <li><a href="">Contact</a></li>
+            <!-- <li><div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div></li>
+            <li id='status'></li> -->
+            <% if logged_in? %>
+            <!-- Avatar & Username -->
+            <li><a href="/users/<%= session[:user_id] %>" class="header-link login-name"><img src="/assets/user.png" class="login-avatar"></a></li>
 
-        <% else %>
+            <!-- Log Out Button -->
+            <li><form action="/sessions" method="post" class="logout-form">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <input type="hidden" value="delete" name="_method">
+              <button class="logout-button">Log Out</button>
+            </form></li>
 
-        <li class="header-link js-login-btn">Log In </li>
-        <li class="header-link"> <a href="/users/new">Sign Up</a></li>
+            <% else %>
 
-        <% end %>
+            <li class="header-link js-login-btn">Log In </li>
+            <li class="header-link"> <a href="/users/new">Sign Up</a></li>
 
-      </ul>
+            <% end %>
+
+          </ul>
+        </nav>
+        <a id="i-nav" href="#">Menu</a>
+
+
+
 
 
       <div class="login-popup-wrap">
@@ -56,6 +63,8 @@
   </header>
   <!-- Popup for User login -->
 
+
   <%= yield %>
+
 </body>
 </html>
