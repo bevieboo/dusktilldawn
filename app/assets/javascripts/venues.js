@@ -35,15 +35,17 @@ $( document ).on('ready', function() {
         });
       });
     };
-  }
+  };
 
   showVenues();
+  $('.event-item').hide();
   $('.events-part').hide();
   $('.comments-part').hide();
     // =================  leo changed here ========
   $('.list').on('click', '.venue-image', function(event) {
                          // '.item'
     $('.list').empty();
+    // $('.events-list').empty();
     var $item = $(event.target).closest('.item');
     var venueId = $item.data('venue-id');
     console.log(venueId);
@@ -89,18 +91,6 @@ $( document ).on('ready', function() {
           $('.events-list').append($newEvent);
       });
 
-
-
-
-
-
-
-
-
-
-
-
-
         // ==============show all comments of this venue ===================
       $.each(data.comments, function(index, comment){
           var commentTemplate = Handlebars.compile($('#comments-template').html());
@@ -115,16 +105,19 @@ $( document ).on('ready', function() {
 
     });
     console.log(this);
+    $('.event-item').show();
     $('.events-part').show();
     $('.comments-part').show();
   })
 
    $(document).on('click', '.back', function() {
     $('.list').empty();
+    $('.events-list').empty();
     showVenues();
+    $('.event-item').hide();
     $('.events-part').hide();
     $('.comments-part').hide();
-  })
+  });
 
   // leo =========== add like function =============
   $('.list').on('click','.likeBtn',function(event){

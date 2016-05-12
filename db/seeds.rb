@@ -203,7 +203,7 @@
    venue12.description = "Irish music, poetry and Guinness, plus trivia, in a snug pub hung with portraits of famous authors."
    venue12.save
 
-   venue13
+   venue13 = Venue.new
    venue13.name = "The Alchemist"
    venue13.address ="361 Brunswick St, Fitzroy VIC 3065"
    venue13.suburd = "Fitzroy"
@@ -217,7 +217,7 @@
 
 
 
->>>>>>> master
+
   # genres table
 
 
