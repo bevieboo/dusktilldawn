@@ -13,7 +13,13 @@ module Api
         comment.venue_id = params[:venue_id]
         comment.content = params[:content]
         comment.save
-        render json: comment.to_json, status: 201
+        # render json: comment.to_json, status: 201
+        # raise comment.inspect
+        user = User.find(session[:user_id])
+        data = {comment: comment, user: user}
+        render json: data.to_json, status: 201
+
+
       end
 
       def show

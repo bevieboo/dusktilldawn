@@ -38,6 +38,7 @@ $( document ).on('ready', function() {
   }
 
   showVenues();
+  $('.comments-part').hide();
     // =================  leo changed here ========
   $('.list').on('click', '.venue-image', function(event) {
                          // '.item'
@@ -79,8 +80,8 @@ $( document ).on('ready', function() {
       $.each(data.comments, function(index, comment){
           var commentTemplate = Handlebars.compile($('#comments-template').html());
           var commentHtml = commentTemplate({
-             content: comment.content
-
+             content: comment.content,
+             user_name: comment.user_name
           });
           var $newComment = $(commentHtml);
           $('.comments-list').append($newComment);
@@ -89,11 +90,13 @@ $( document ).on('ready', function() {
 
     });
     console.log(this);
+    $('.comments-part').show();
   })
 
    $(document).on('click', '.back', function() {
     $('.list').empty();
     showVenues();
+    $('.comments-part').hide();
   })
 
   // leo =========== add like function =============
@@ -112,16 +115,23 @@ $( document ).on('ready', function() {
   // ==================== add comment function =============
     $('.postBtn').on('click',function(){
        var venueId = $('.item-detail').data('venue-id');
-       $.ajax({
-         url: 'http://localhost:3000/api/comments',
-         method: 'post',
-         data: {content: $('#input_comment').val(), venue_id: venueId }
-       }).done(function(){
-         console.log('add successful');
-       })
+       if ($('#input_comment').val() != '') {
+           $.ajax({
+             url: 'http://localhost:3000/api/comments',
+             method: 'post',
+             data: {content: $('#input_comment').val(), venue_id: venueId }
+           }).done(function(response){
+             console.log('add successful');
+             var commentTemplate = Handlebars.compile($('#comments-template').html());
+             var commentHtml = commentTemplate({
+                content: response.comment.content,
+                user_name: response.user.name
+             });
+             var $newComment = $(commentHtml);
+             $('.comments-list').append($newComment);
+             $('#input_comment').val('');
+           })
+       }
     })
-
-
-
   //==========================================================
 });

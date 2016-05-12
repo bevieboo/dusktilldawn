@@ -1,3 +1,12 @@
+<!-- <script type="text/javascript">
+   var login = <% if current_user %>"<%= true %>"<% else %>"<%= false %>"<% end %>
+   console.log("Session id: ", login);
+   if (login == "false"){
+      console.log("Hiding input.");
+      $('#input_comment').hide();
+   };
+</script> -->
+
 <div class="list"></div>
 
 <script id="venues-template" type='text/x-handlebars-template'>
@@ -78,6 +87,7 @@
         </script>
 
         </article>
+
 
         <textarea id="input_comment" rows="8" cols='40'></textarea>
         <br/>
