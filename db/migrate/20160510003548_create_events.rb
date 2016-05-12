@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.text :image
       t.timestamp :time
+      
 
       t.timestamps null: false
     end
