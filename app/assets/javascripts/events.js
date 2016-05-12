@@ -38,12 +38,14 @@ $(document).on('ready', function() {
                     $($newDiv).append($newLink);
                     $('.list').append($newDiv);
 
+
                 });
             });
         };
     }
 
     showEvents();
+
 
     // $('.list').on('click', '.item', function(event) {
     //
