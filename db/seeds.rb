@@ -203,8 +203,21 @@
    venue12.description = "Irish music, poetry and Guinness, plus trivia, in a snug pub hung with portraits of famous authors."
    venue12.save
 
+   venue13
+   venue13.name = "The Alchemist"
+   venue13.address ="361 Brunswick St, Fitzroy VIC 3065"
+   venue13.suburd = "Fitzroy"
+   venue13.postcode = 3065
+   venue13.venue_type = 'bar'
+   venue13.image = 'http://www.cityfied.com.au/uploads/thealchemistbar-7940.jpg'
+   venue13.user_id = user2.id
+   venue13.description = "Cocktails and share plates in a lavish space with vintage lounges and black-and-white prints."
+   venue13.save
 
 
+
+
+>>>>>>> master
   # genres table
 
 
