@@ -6,8 +6,9 @@ class EventsController < ApplicationController
   end
 
   def search_event
-     if params["search-box"] != ''
-          genre = Genre.find(params["search-box"].to_i)
+     if params[:search_box] != ''
+          # genre = Genre.find(params["search-box"].to_i)
+          genre = Genre.find_by(name: params[:search_box])
           if genre != nil
              @events = genre.events
              render :result

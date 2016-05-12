@@ -1,0 +1,26 @@
+@media screen and (max-width: 980px) {
+  .logo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .logo {
+    width: 150px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 100px;
+  }
+  .search-title {
+    font-size: 26px;
+  }
+  .bg-wrap {
+    padding-top: 0.7;
+    height: -155;
+  }
+
+}
