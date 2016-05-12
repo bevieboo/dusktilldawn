@@ -38,6 +38,7 @@ $( document ).on('ready', function() {
   }
 
   showVenues();
+  $('.events-part').hide();
   $('.comments-part').hide();
     // =================  leo changed here ========
   $('.list').on('click', '.venue-image', function(event) {
@@ -114,12 +115,14 @@ $( document ).on('ready', function() {
 
     });
     console.log(this);
+    $('.events-part').show();
     $('.comments-part').show();
   })
 
    $(document).on('click', '.back', function() {
     $('.list').empty();
     showVenues();
+    $('.events-part').hide();
     $('.comments-part').hide();
   })
 
