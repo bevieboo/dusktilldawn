@@ -2,23 +2,25 @@
     <h1>search events</h1>
     <div class="list">
     <% @events.each do |event| %>
-        <div class="item" data-event-id="<%=event.id%>">
-          <div class="event-image">
-            <img src="<%=event.image%>">
-          </div>
-          <div class="venue-details-wrap">
-            <div class="<%=event.genre.name%>">
-              <h2></h2>
-            </div>
-            <div class="event-time">
-              <a href="/events/<%= event.id %>">Click for details...</a>
-              <h2><%=event.event_time%></h2>
-            </div>
-            <div class="event-venue">
-              <h2><%=event.venue.name%></h2>
-            </div>
-          </div>
-        </div>
+
+      <a href="/events/<%=event.id%>">
+          <span class="item" data-event-id="<%=event.id%>">
+            <span class="event-image">
+              <img src="<%=event.image%>">
+            </span>
+            <span class="venue-details-wrap">
+              <span class="<%=event.genre.name%>">
+                <h2></h2>
+              </span>
+              <span class="event-time">
+                <h2><%=event.event_time%></h2>
+              </span>
+              <span class="event-venue">
+                <h2><%=event.venue.name%></h2>
+              </span>
+            </span>
+          </span>
+      </a>
     <%end%>
    </div>
 </section>

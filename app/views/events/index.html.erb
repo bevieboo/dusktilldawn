@@ -1,7 +1,7 @@
 <div class="list"></div>
 
 <script id="events-template" type='text/x-handlebars-template'>
-
+<a href="/events/{{id}}">
   <div class="item" data-venue-id="{{ id }}">
     <div class="venue-image">
       <img src="{{ image_url }}">
@@ -20,11 +20,11 @@
       <div class="venue-suburb">
         <h2>{{ venue }}</h2>
       </div>
-    
+
 
     </div>
   </div>
-
+</a>
 </script>
 
 <script id="event-details-template" type='text/x-handlebars-template'>
