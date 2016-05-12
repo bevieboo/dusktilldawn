@@ -30,12 +30,12 @@ $(document).on('ready', function() {
                     });
 
                     var $newDiv = $(html);
-                    var $newLink = $("<a />", {
-                      href : '/events/' + event.id,
-                      text : "Click for details.."
-                    });
-
-                    $($newDiv).append($newLink);
+                    // var $newLink = $("<a />", {
+                    //   href : '/events/' + event.id,
+                    //   text : "Click for details.."
+                    // });
+                    //
+                    // $($newDiv).append($newLink);
                     $('.list').append($newDiv);
 
 
@@ -45,6 +45,11 @@ $(document).on('ready', function() {
     }
 
     showEvents();
+
+    // $(".item").click(function(){
+    //   $(window).attr("location","http://localhost:3000/events/ + event.id");
+    //   // window.location.href = "http://localhost:3000/events/ + event.id";
+    // });
 
 
     // $('.list').on('click', '.item', function(event) {
