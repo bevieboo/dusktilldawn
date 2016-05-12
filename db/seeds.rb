@@ -133,7 +133,7 @@
    venue6.postcode = 3000
    venue6.venue_type = 'bar'
    venue6.image = 'http://jfkgwl.corednacdn.com/web_images/image_gallery/album5028_39333_berlin-bar-cbd-best-bars-melbourne-cocktail-hidden-laneway-wine-cool-lounge-002.jpg'
-   venue6.user_id = user1.id
+   venue6.user_id = user2.id
    venue6.description = "Split-space East/West-themed bar with plush banquettes, bunker-style decor and bathtub tables."
    venue6.save
 
