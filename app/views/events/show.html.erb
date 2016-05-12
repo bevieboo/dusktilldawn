@@ -1,25 +1,28 @@
 <!-- details of events -->
-<div class="details">
-  <div class="event-name">
-    <h1> <%= @event.name %> </h1>
-  </div>
-  <div class="event-image">
-    <img src="<%= @event.image%>">
-  </div>
-  <div class="venue-details-wrap">
-      <h2><%= @event.genre.name %></h2>
-  </div>
-  <div class="event-time">
-    <h2><%= formatted_date(@event.event_time) %></h2>
+<div class="list">
+  <div class="item-detail">
+    <div class="event-image">
+      <img src="<%= @event.image%>">
+    </div>
+    <div class="event-name">
+      <h2> <%= @event.name %> </h2>
+    </div>
+    <div class="venue-details-wrap">
+        <h2><%= @event.genre.name %></h2>
+    </div>
+    <div class="event-time">
+      <h2><%= formatted_date(@event.event_time) %></h2>
 
-  </div>
-  <div class="event-venue">
-    <h2><%= @event.venue.name %></h2>
-  </div>
-  <div class="event-venue-address">
-    <h2> @ <%= @event.venue.address%> </h2>
-  </div>
-  <div class="event-description">
-    <p> <%= @event.description %></p>
+    </div>
+    <div class="event-venue">
+      <h2><%= @event.venue.name %></h2>
+    </div>
+    <div class="event-venue-address">
+      <h2> @ <%= @event.venue.address%> </h2>
+    </div>
+    <br>
+    <div class="event-description">
+      <p> <%= @event.description %></p>
+    </div>
   </div>
 </div>
