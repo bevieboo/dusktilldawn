@@ -1,25 +1,120 @@
-<!-- details of events -->
-<div class="details">
-  <div class="event-name">
-    <h1> <%= @event.name %> </h1>
-  </div>
-  <div class="event-image">
-    <img src="<%= @event.image%>">
-  </div>
-  <div class="venue-details-wrap">
-      <h2><%= @event.genre.name %></h2>
-  </div>
-  <div class="event-time">
-    <h2><%= formatted_date(@event.event_time) %></h2>
+<style>
+    #content {
+        color: black;
+    }
+    #popUpImg {
+        width: 50%;
 
+    }
+
+</style>
+
+<!-- details of events -->
+<div class="list">
+  <div class="item-detail">
+      <div class="event-image">
+        <img src="<%= @event.image%>">
+      </div>
+
+      <div class="events-page">
+        <div>
+          <div class="event-name">
+            <h2> <%= @event.name %> </h2>
+          </div>
+          <div class="venue-details-wrap">
+              <h2><%= @event.genre.name %></h2>
+          </div>
+          <div class="event-time">
+            <h2><%= formatted_date(@event.event_time) %></h2>
+
+          </div>
+          <div class="event-venue">
+            <h2><%= @event.venue.name %></h2>
+          </div>
+          <div class="event-venue-address">
+            <h2> @ <%= @event.venue.address%> </h2>
+          </div>
+        </div>
+        <div class="map"></div>
+      </div>
+
+      <div class="event-description">
+        <p> <%= @event.description %></p>
+      </div>
+      <div class="back"> BACK </div>
   </div>
-  <div class="event-venue">
-    <h2><%= @event.venue.name %></h2>
-  </div>
-  <div class="event-venue-address">
-    <h2> @ <%= @event.venue.address%> </h2>
-  </div>
-  <div class="event-description">
-    <p> <%= @event.description %></p>
-  </div>
+
+
 </div>
+
+<section id="wrapper">
+
+
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCgv2nF9cSyCe8iy0UW7YtTiB3FpprBl4c&sensor=true"></script>
+
+
+      <script>
+          function whatever(position) {
+              console.log("position");
+          }
+
+          function success(position) {
+
+              var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+              console.log(coords);
+
+              var options = {
+                  zoom: 15,
+                  center: coords,
+                  mapTypeControl: false,
+                  navigationControlOptions: {
+                      style: google.maps.NavigationControlStyle.SMALL
+                  },
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              var map = new google.maps.Map(document.getElementsByClassName("map")[0], options);
+
+              // users position
+              var image = "https://learningcenter.nsta.org/images/icon_person_small.gif"
+
+              var marker = new google.maps.Marker({position: coords, map: map, icon: image, title: "You are here!"});
+              var userLocationText = '<div id="content">You are here!</div>';
+              var userLocInfoWindow = new google.maps.InfoWindow({content: userLocationText, maxWidth: 300});
+              marker.addListener('mouseover', function () {
+                  userLocInfoWindow.open(map, marker);
+              });
+
+              $.ajax({url: 'http://localhost:3000/api/venues', type: 'get', dataType: 'JSON'}).done(function (response) {
+                  console.log(response)
+
+                  response.forEach(function (venue) {
+                      var latLng = new google.maps.LatLng(venue.latitude, venue.longitude);
+
+                      var markerBar = new google.maps.Marker({
+                          position: latLng,
+                          map: map,
+                          title: venue.name + ": Address: " + venue.address
+                      });
+
+                      //FOR THE INFO WINDOW ABOUT THE BAR
+                      var contentString = '<div id="content"><h1>' + venue.name + '</h1><h5>' + venue.address + '</h5><div id="bodyContent"><img id="popUpImg" src=' + venue.image + '><p>' + venue.description + '</p></div>';
+
+                      var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 300});
+                      markerBar.addListener('mouseover', function () {
+                          infowindow.open(map, markerBar);
+                      });
+                      (map, markerBar);
+
+                  });
+              });
+          }
+
+          console.log(window.navigator);
+          if (window.navigator.geolocation) {
+              window.navigator.geolocation.getCurrentPosition(success, whatever);
+          } else {
+              error('Geo Location is not supported');
+          }
+      </script>
+
+  </section>

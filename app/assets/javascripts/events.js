@@ -21,19 +21,13 @@ $(document).on('ready', function() {
           var html = templateFunction({
             name: event.name,
             id: event.id,
-            // type: event.venue.venue_type,
+            type: event.venue.venue_type,
             image_url: eventImage,
-            // venue: event.venue.name,
+            venue: event.venue.name,
             like_count: event.like_count
           });
 
           var $newDiv = $(html);
-          var $newLink = $("<a />", {
-            href : '/events/' + event.id,
-            text : "Click for details.."
-          });
-
-          $($newDiv).append($newLink);
           $('.list').append($newDiv);
 
         });

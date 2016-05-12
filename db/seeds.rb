@@ -208,7 +208,7 @@ You might intend to stay for a bit of a dance, but time isn't really a thing tha
                        event_time: "2016-5-20 18:12:12",
                        genre_id: genre2.id,
                        venue_id: venue3.id,
-                       description: "In need of a mid-week funtime fix?RUM-ble in the Jungle is for you!!!Man-about-town and celebrated vinyl collector Joey Elbows will be there to spin out the tunes")
+                       description: "In need of a mid-week funtime fix?  RUM-ble in the Jungle is for you!!!  Man-about-town and celebrated vinyl collector Joey Elbows will be there to spin out the tunes")
 
    event = Event.create(name: "HAAAA Wednesday",
                        image: "http://www.bizbash.com/content/editorial/storyimg/big/spidypreview03.jpg",
