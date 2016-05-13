@@ -73,7 +73,7 @@
    venue2.suburd = "Richmond"
    venue2.postcode = 3000
    venue2.venue_type = 'bar'
-   venue2.image = 'http://www.buddhabar.com/img/carousel/Slides/Restaurants/Manille/1.jpg'
+   venue2.image = 'http://www.barsandnightclubs.com.au/assets/images/content/club/melbourne//Precinct%20Hotel%20-%20Melbourne%20East/Precinct%20Hotel%20-%20Melbourne%20East%20-%20Melbourne%20-%20Photo08.jpg'
    venue2.user_id = user2.id
    venue2.description = "Originally established in 1926, the Precinct Hotel today represents the culinary, corporate and
    casual delights that see Melbourne as a stand out international destination for
@@ -91,7 +91,7 @@
    venue3.suburd = "Richmond"
    venue3.postcode = 3000
    venue3.venue_type = 'bar'
-   venue3.image = 'http://www.buddhabar.com/img/carousel/Slides/Restaurants/Manille/1.jpg'
+   venue3.image = 'http://www.hospitalitydesign.com.au/wp-content/uploads/2012/08/Hospitality-Design-Melbourne-Commercial-Kitchen-Design-Catering-Equipment-The-Precinct-Hotel181.jpg'
    venue3.user_id = user2.id
    venue3.description = "Originally established in 1926, the Precinct Hotel today represents the culinary, corporate and
    casual delights that see Melbourne as a stand out international destination for
