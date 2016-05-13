@@ -59,6 +59,35 @@
   margin: 5px;
 }
 
+.list-venue img {
+  height: 280px;
+  width: 100%;
+}
+
+.list .item{
+ transition: .5s;
+ -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+ -moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+ box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.list .item:hover{
+ transform:translateY(0.3em);
+}
+
+.likeBtn{
+ -webkit-box-shadow: 5px 5px 5px 0px rgba(10, 10, 10, 0.75);
+-moz-box-shadow:    5px 5px 5px 0px rgba(10, 10, 10, 0.75);
+box-shadow:         5px 5px 5px 0px rgba(10, 10, 10, 0.75);
+transition: .1s;
+}
+
+.likeBtn:active{
+ -webkit-box-shadow: -1px -1px 5px 0px rgba(10, 10, 10, 0.75);
+-moz-box-shadow:    -1px -1px 5px 0px rgba(10, 10, 10, 0.75);
+box-shadow:         -1px -1px 5px 0px rgba(10, 10, 10, 0.75);
+}
+
 // Bev
 .venue-wrapper {
   width: 50%;
@@ -84,6 +113,7 @@
   text-align: center;
   margin-top: 0px;
   position: relative;
+  clear: both;
 }
 .venue-detail-image img {
   width: 100%;

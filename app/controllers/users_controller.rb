@@ -27,6 +27,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_find = User.find(params[:id]).user_type_id
+    if @user_find == UserType.first.id
+      @user_type = UserType.first.name
+    elsif @user_find == UserType.last.id
+      @user_type = UserType.last.name
+    end
     @genres = Genre.all
     @venues = Venue.where(user_id: current_user.id)
   end
