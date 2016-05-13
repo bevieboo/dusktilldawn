@@ -31,7 +31,7 @@ $(document).on('ready', function() {
             image_url: eventImage,
             venue: event.venue.name,
             like_count: event.like_count,
-            time: new_date
+            event_time: new_date
           });
           var $newDiv = $(html);
           $('.list').append($newDiv);
