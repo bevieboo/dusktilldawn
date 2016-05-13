@@ -43,7 +43,7 @@ $( document ).on('ready', function() {
   $('.comments-part').hide();
     // =================  leo changed here ========
     console.log('hellho');
-  $('.list').on('click', '.venue-image', function(event) {
+  $('.list').on('click', '.list-venue', function(event) {
     console.log('hello');
                          // '.item'
     $('.list').empty();
