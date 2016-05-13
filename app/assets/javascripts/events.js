@@ -17,17 +17,27 @@ $(document).on('ready', function() {
             eventImage = event.image
           };
 
+          var monthsArr =[ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+          var date = event.event_time;
+          console.log(date);
+          var string = new Date(date);
+          var month = (monthsArr[string.getMonth()]);
+          var new_date = (string.getDay()+ " " + month + " " + string.getFullYear()+ ",  " + string.getHours()+ ":" + string.getMinutes());
+
           var html = templateFunction({
             name: event.name,
             id: event.id,
             type: event.venue.venue_type,
             image_url: eventImage,
             venue: event.venue.name,
-            like_count: event.like_count
+            like_count: event.like_count,
+            time: new_date
           });
-
           var $newDiv = $(html);
           $('.list').append($newDiv);
+
+
+
 
         });
       });
