@@ -2,28 +2,27 @@
 .details {
   text-align: center;
   margin: 100px 100px;
+}
 
-}
-.event-image {
-  width: 300px;
-  height: 150px;
-  margin: auto;
-}
 .event-name {
   color: $sunset-orange;
 }
 
 .map {
   width: 50%;
-  height: 200px;
+  height: 300px;
 }
 
 .events-page > div {
   vertical-align: top;
   display: inline-block;
+  line-height: 40px;
   width: 49%;
+  margin-top: 20px;
 }
-
+.event-description {
+  line-height: 30px;
+}
 .venue-details-name {
   text-align: center;
 }
