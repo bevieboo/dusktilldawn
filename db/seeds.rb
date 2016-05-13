@@ -67,6 +67,43 @@
    Precinct Hotel is the place to be in Melbourne"
    venue.save
 
+   venue2 = Venue.new
+   venue2.name = "Precint Hotel"
+   venue2.address = "60 Swan St, Cremorne VIC 3121"
+   venue2.suburd = "Richmond"
+   venue2.postcode = 3000
+   venue2.venue_type = 'bar'
+   venue2.image = 'http://www.buddhabar.com/img/carousel/Slides/Restaurants/Manille/1.jpg'
+   venue2.user_id = user2.id
+   venue2.description = "Originally established in 1926, the Precinct Hotel today represents the culinary, corporate and
+   casual delights that see Melbourne as a stand out international destination for
+   visitors and preferred abode for many. Nestled in the heart of Richmond and
+   simultaneously catering for a versatile range of occasions, the Precinct Hotel is a
+   family owned and operated establishment that offers a warm yet sophisticated
+   atmosphere, guaranteed to make any soiree an unforgettable occasion. From intimate
+   dining and live entertainment to big screen sporting events over the weekend...
+   Precinct Hotel is the place to be in Melbourne"
+   venue2.save
+
+   venue3 = Venue.new
+   venue3.name = "Precint Hotel"
+   venue3.address = "60 Swan St, Cremorne VIC 3121"
+   venue3.suburd = "Richmond"
+   venue3.postcode = 3000
+   venue3.venue_type = 'bar'
+   venue3.image = 'http://www.buddhabar.com/img/carousel/Slides/Restaurants/Manille/1.jpg'
+   venue3.user_id = user2.id
+   venue3.description = "Originally established in 1926, the Precinct Hotel today represents the culinary, corporate and
+   casual delights that see Melbourne as a stand out international destination for
+   visitors and preferred abode for many. Nestled in the heart of Richmond and
+   simultaneously catering for a versatile range of occasions, the Precinct Hotel is a
+   family owned and operated establishment that offers a warm yet sophisticated
+   atmosphere, guaranteed to make any soiree an unforgettable occasion. From intimate
+   dining and live entertainment to big screen sporting events over the weekend...
+   Precinct Hotel is the place to be in Melbourne"
+   venue3.save
+
+
    venue4 = Venue.new
    venue4.name = "Sorry Grandma"
    venue4.address ="590 Little Bourke St, Melbourne VIC 3000"
