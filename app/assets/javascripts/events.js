@@ -23,11 +23,12 @@ $(document).on('ready', function() {
             type: event.venue.venue_type,
             image_url: eventImage,
             venue: event.venue.name,
+            event_time: event.event_time,
             like_count: event.like_count
           });
 
           var $newDiv = $(html);
-          $('.list').append($newDiv);
+          $('.list-all-events').append($newDiv);
 
         });
       });
