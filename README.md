@@ -6,6 +6,10 @@ It shows users also a map to check how far it is the place, where the event is g
 
 Owner's clubs/bar have their own access to the website so they can manage their own venue and organise their own event.
 
+<img src="http://i.imgur.com/67t6AHG.jpg?1" width="500">
+
+[Dusk Til Dawn](http://dusktilldawn.herokuapp.com/)
+
 ##Languages and gems
 
 There have been installed different gem to facilitate the execution of the codes:
